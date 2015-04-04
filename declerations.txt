@@ -1,0 +1,7313 @@
+QUESTION 
+Given
+
+class Animal{}
+class Dog extends Animal{}
+
+Will the following compile?
+
+List<? super Dog> dogs = new ArrayList<Dog>();
+    	    	
+dogs.add(new Dog()); // line 1
+dogs.add(new Animal()); // line 2
+
+OPTIONS
+3
+1. Yes
+2. No, due to line 1
+3. No, due to line 2
+ANSWER 3
+<b>Option 3 is correct. No, due to line 2</b>
+
+END QUESTION
+QUESTION 
+What is the output?
+
+class Base
+{
+	public int x = 1;
+}
+
+public class Test extends Base{ 
+	
+	public int x = 2;
+    public static void main(String argv[])
+    { 
+    	Base foo = new Test();    	
+    	System.out.println("x = " + foo.x);
+
+   }
+
+}
+
+OPTIONS
+2
+1. 1
+2. 2
+ANSWER 1
+<b>Option 1 is correct, 1 is output</b>
+
+Polymorphism only applies to instance methods.
+
+NOT to static methods or static and instance variables.
+
+END QUESTION
+QUESTION 
+Is this code valid?
+
+public interface Foo {  
+   public void test(int[] d[]);
+}
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it IS valid</b>
+
+Valid but not very nice syntax!
+ 
+It is the same as
+
+	public void test(int[][] d)
+
+END QUESTION
+QUESTION 
+What is the output?
+
+public class Test{ 
+    public static void main(String argv[])
+    { 
+    	int[] a = {1,2,3,4};
+    	int[] b = new Test().update(a);
+    	
+    	System.out.println("A " + 
+    			a[0] + a[1] + a[2] + a[3]);
+    	System.out.println("B " + 
+    			b[0] + b[1] + b[2] + b[3]);    	   	
+   }
+    
+   int[] update(int[] x)
+   {
+	   int[]y= x;
+	   y[1] = 4;
+	   return y;
+   }
+}
+
+OPTIONS
+4
+1. Compilation error
+2. Prints A 1434 B 1434
+3. Prints A 1234 B 1434
+4. Prints A 1234 B 1234
+ANSWER 3
+<b>Option 2 is correct, Prints A 1434 B 1434</b>
+
+The array references a and b point to the same array, when the update method updates the b array the a array reference also gets updated.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+public abstract class Test{ 
+    public static void main(String argv[])
+    { 
+    	do while(true)
+    		System.out.println("Hello");   	
+    	while(false);
+   	
+   }
+}
+
+OPTIONS
+3
+1. Compilation error
+2. Prints Hello once
+3. Prints Hello until program is stopped
+ANSWER 3
+<b>Option 3 is correct, Prints Hello until program is stopped</b>
+
+END QUESTION
+QUESTION 
+What is the output?
+
+class Top 
+{
+	int x = 3;
+}
+
+public class Test extends Top
+{  		
+	int x = 4;
+	
+	public static void main(String[] t)
+	{
+		Top top = new Test();
+		System.out.println(top.x);
+	}
+}  
+
+OPTIONS
+2
+1. 3
+2. 4
+ANSWER 1
+<b>Option 1 is correct, 3 is output</b>
+
+Variables are not overriden they are shadowed. Its bad practice, but legal. 
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+'Polling' is the term used to mean retrieve and not remove from a collection. 
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement IS incorrect</b>
+
+'Polling' is the term used to mean retrieve AND remove from a collection. 
+
+The TreeSet interface has pollFirst() and pollLast() methods. Similarly, TreeMap has pollFirstEntry() and pollLastEntry().
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+'Polling' is the term used to mean retrieve and remove from a collection. 
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement IS correct</b>
+
+The TreeSet interface has pollFirst() and pollLast() methods. Similarly, TreeMap has pollFirstEntry() and pollLastEntry().
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+TreeSet and TreeMap DO NOT have methods that return a collection in the reverse order.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement IS incorrect</b>
+
+TreeSet and TreeMap DO have methods that return a collection in the reverse order.
+
+These are descendingSet() and descendingMap(), respectively.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+TreeSet and TreeMap have methods that return a collection in the reverse order.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement IS correct</b>
+
+These are descendingSet() and descendingMap(), respectively.
+
+END QUESTION
+QUESTION 
+What will the output be?
+
+class Base 
+{
+	public int fred = 1;
+}
+
+public class Test extends Base
+{  
+	
+	public int fred = 2;
+	public static void main(String[] args)
+	{
+		Base b = new Test();
+		System.out.println(b.fred);		
+	}
+}  
+
+OPTIONS
+2
+1. 1
+2. 2
+ANSWER 1
+<b>Option 1 is correct, 1 is output</b>
+
+END QUESTION
+QUESTION 
+What will the output be?
+
+System.out.printf("%d",  123.45);
+
+OPTIONS
+4
+1. 123.45
+2. 123
+3. Compilation error
+4. Runtime error
+ANSWER 4
+<b>Option 4 is correct, Runtime error</b>
+
+This is invalid; a float cannot be formatted  as a decimal.
+
+END QUESTION
+QUESTION 
+What will the output be?
+
+System.out.printf("%c",  "s");
+
+OPTIONS
+4
+1. s
+2. 's'
+3. compilation error
+4. Runtime error
+ANSWER 4
+<b>Option 4 is correct, Runtime error</b>
+
+This is invalid – a character  is expected,  but a string is given.
+
+END QUESTION
+QUESTION 
+What will the output be?
+
+System.out.printf("%b",  123)
+
+OPTIONS
+4
+1. 123
+2. true
+3. false
+4. Runtime error
+ANSWER 2
+<b>Option 2 is correct, true is output</b>
+
+This is valid – Boolean ‘true’ will be printed.
+
+END QUESTION
+QUESTION 
+What will the output be?
+
+System.out.format("%s",new Integer(3));
+
+OPTIONS
+4
+1. 3
+2. 0
+3. Compiler error
+4. Runtime error
+ANSWER 1
+<b>Option 1 is correct, 3 is output</b>
+
+END QUESTION
+QUESTION 
+Considering %b is boolean, what will the output be?
+
+System.out.format("%b",null);
+
+OPTIONS
+4
+1. true
+2. false
+3. Compiler error
+4. Runtime error
+ANSWER 2
+<b>Option 2 is correct, false is output</b>
+
+If the  argument arg  is  null, then  the  result  is  "false".  If arg  is  a  boolean or Boolean, then the result is the string returned by String.valueOf(). Otherwise, the result is "true".
+
+END QUESTION
+QUESTION 
+What will the output be?
+
+System.out.format("%d",20.6);
+
+OPTIONS
+4
+1. 20.6
+2. 20
+3. Compiler error
+4. Runtime error
+ANSWER 4
+<b>Option 4 is correct, Runtime error</b>
+
+Expecting a decimal, got a float, change the %d to a %f
+
+System.out.format("%f",20.6);
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Instance variables and objects are stored on the stack. Local variables are stored in the heap.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement IS false</b>
+
+Instance variables and objects are stored on the heap. Local variables are stored in the stack.
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Instance variables and objects are stored on the heap. Local variables are stored in the stack.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement IS true</b>
+END QUESTION
+QUESTION 
+What is the output?
+
+byte x = 10;
+
+switch(x)
+{
+case 10 : 
+	System.out.println("10");
+case 10+4 :
+	System.out.println("100");
+	break;
+case 8+6 :
+	System.out.println("100");								
+}
+
+OPTIONS
+4
+1. 10
+2. 10 100
+3. 10 100 1000
+4. Compiler error
+ANSWER 4
+<b>Option 4 is correct, compiler error</b>
+It  is  possible to  do calculations in a case statement (e.g. case 10+4: or case CONST + 12). It IS illegal to have multiple case statements with the same value.
+
+i.e. 10+4 = 14 and 8+6 = 14.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+byte x = 10;
+
+switch(x)
+{
+case 10 : 
+	System.out.println("10");
+case 100 :
+	System.out.println("100");
+	break;
+case 1000 :
+	System.out.println("100");								
+}
+
+OPTIONS
+4
+1. 10
+2. 10 100
+3. 10 100 1000
+4. Compiler error
+ANSWER 4
+<b>Option 4 is correct, compiler error</b>
+While a switch can take anything that can be cast to int, the case statements can only be within the range of the actual type given to the switch statement. 
+
+Therefore, byte case values can only be from 0 to 127. Any value outside this range is a compile time error.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+System.out.println(2 + 5 + " ");
+
+OPTIONS
+2
+1. 25
+2. 7
+ANSWER 2
+<b>Option 2 is correct, prints 7</b>
+When concatenating  a String, remember that concatenation runs from left to right.
+Therefore, if either operand is a String,  the operands are concatenated.  
+
+If both operands are numbers, they are added together. For example:
+
+System.out.println(" " + 2 + 5 + " "); prints 25.
+System.out.println(2 + 5 + " "); prints 7.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+System.out.println(" " + 2 + 5 + " "); 
+
+OPTIONS
+2
+1. 25
+2. 7
+ANSWER 1
+<b>Option 1 is correct, prints 25</b>
+When concatenating  a String, remember that concatenation runs from left to right.
+Therefore, if either operand is a String,  the operands are concatenated.  
+
+If both operands are numbers, they are added together. For example:
+
+System.out.println(" " + 2 + 5 + " "); prints 25.
+System.out.println(2 + 5 + " "); prints 7.
+
+END QUESTION
+QUESTION 
+Given
+
+class X{};
+class Y extends X{};
+class Z extends Y{};
+
+class Test
+{
+	void method(List<? super Y> list)
+	{
+		// HERE				
+	}
+}
+
+What line inserted at // HERE would be INVALID?
+OPTIONS
+3
+1. list.add(new X());
+2. list.add(new Y());
+3. list.add(new Z());	
+ANSWER 1
+<b>Option 1 is correct, this line would be invalid</b>
+You could only insert a Y or X to the list at this point.
+
+Think about it, if you pass a List of Ys into the method and then add an X, you would have a List of Ys with an X in it.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+You can make a Class, method and variable final.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is correct</b>
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+You can make a Class and variable final, but NOT a method.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement is incorrect</b>
+
+A method can be declared final.
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Base
+{
+	public final void method(){};
+}
+class Super extends Base
+{  
+    public final void method(){}  
+}  
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+A final method cannot be overridden by subclasses. This is used to prevent unexpected behavior from a subclass altering a method that may be crucial to the function or consistency of the class
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+List<? extends Object> list1 = new ArrayList<Integer>();
+List<? super Object> list2 = new ArrayList<Object>();    
+    	
+list1 = list2;
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it will compile</b>
+
+list1 can point to anything that extends Object, list2 can point to anything that is super of Object, which is ONLY Object, so 
+list1 CAN point to list2 as list2 can ONLY be a List of Objects.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+List<?> list = new ArrayList<Integer>();
+List<? extends Object> list1 = new ArrayList<Float>();    
+    	
+list = list1;
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it will compile</b>
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+List<?> list2 = new ArrayList<Integer>();    	    	
+list2.add(new Object());
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+You cannot add to  list2.
+
+END QUESTION
+QUESTION 
+What's the difference between the 2 following lines of code?
+
+1. List<? extends Object> list1 = null;
+2. List<?> list2  = null;
+
+OPTIONS
+4
+1. Line 1 will not compile
+2. Line 2 will not compile
+3. You can add to list1 but not list2
+4. No difference.
+ANSWER 4
+<b>Option 4 is correct, they are identical.</b>
+
+Both will compile OK and you will not be able to add to either of them.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Test
+{
+	void insert(List<?> list)
+	{
+		list.add(new Object());
+	)
+}
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+The problem is in the list.add() method. The ? wild card allows a list of ANY type to be passed to the method, but the add() method 
+is not valid.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+List<? super Animal> list = new ArrayList<Dog>();
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+Dog is too low in the class hierarchy.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+List<?> list = new ArrayList<? extends Animal>();
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+Cant use wildcards in object creation (right hand side).
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+HashTable is unsynchronized and can have null keys and values. Conversely, HashMap
+is synchronized and cannot have null keys and values.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it is NOT true</b>
+
+HashMap is unsynchronized and can have null keys and values. Conversely, HashTable
+is synchronized and cannot have null keys and values.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+HashMap is unsynchronized and can have null keys and values. Conversely, HashTable
+is synchronized and cannot have null keys and values.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it is true</b>
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class widenAndBox
+{
+	static void go(Long x) {}
+	
+	public static void main(String[] a) 
+	{
+		byte b = 5;
+		go(b);
+	}
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it WILL NOT compile</b>
+
+This does not work. Java cannot widen the byte into a long and then box it into a Long.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Cohesion is all about how a single class is defined: it is used to indicate the degree to
+which a class has a single, well-focused purpose.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is true</b>
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Coupling is the degree to which one class knows about the other. Tight coupling is
+when interaction is through an interface, whereas loose coupling is when interaction is
+between implementations.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement is false</b>
+
+Coupling is the degree to which one class knows about the other. Loose coupling is
+when interaction is through an interface, whereas tight coupling is when interaction is
+between implementations.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Coupling is the degree to which one class knows about the other. Loose coupling is
+when interaction is through an interface, whereas tight coupling is when interaction is
+between implementations.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is true</b>
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+It is illegal for the left hand side of the instanceof operator to be null.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement is false</b>
+
+It is legal for the left hand side of the instanceof operator to be null.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+It is legal for the left hand side of the instanceof operator to be null.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is true</b>
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Any code after a throw statement is reachable, and so will NOT result in a compilation
+error.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement is false</b>
+
+Any code after a throw statement is unreachable, and so will result in a compilation
+error.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Any code after a throw statement is unreachable, and so will result in a compilation
+error.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is true</b>
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Any code after a throw statement is unreachable, and so will result in a compilation
+error.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is true</b>
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Static methods can be overridden to be non-static
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, the statement is false</b>
+
+Static methods cannot be overridden to be non-static, and vice versa. This will result in
+a compilation error.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Static methods cannot be overridden to be non-static, and vice versa. This will result in
+a compilation error.
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is true</b>
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Whilst Integer can be boxed to int, Integer[] cannot be boxed into int[].
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, the statement is correct</b>
+
+Integer[] cannot be boxed into int[].
+
+END QUESTION
+QUESTION 
+
+Given:
+
+ public class Foo 
+ {
+	static void method(int...x) 
+	{
+ 		// insert code here
+    }
+ }
+ 
+Which code fragment, inserted independently at line 12, will allow the class to compile?
+
+OPTIONS
+4
+1. while( x.hasNext()) System.out.println( x.next());
+2. for each(x) System.out.println(x);
+3. for(int z : x) System.out.println(z);
+4. None of the above
+ANSWER 3
+<b>Option 3 is correct</b>
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Base
+{
+	Base method(int x)
+	{
+		return new Base();
+	}
+}
+
+public class Test extends Base
+{           	
+	Object method(int x)
+	{
+		return new Object();
+	}
+}  
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+You are allowed to change the return type in the overriding method as long as the new return type is a subtype of the declared return type of the overriden method.
+
+In this case Object is a supertype NOT a subtype of Base. So a comipler error is generated.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Base
+{
+	Base method(int x)
+	{
+		return new Base();
+	}
+}
+
+public class Test extends Base
+{           	
+	Test method(int x)
+	{
+		return new Test();
+	}
+} 
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it will compile</b>
+
+You are allowed to change the return type in the overriding method as long as the new return type is a subtype of the declared return type of the overriden method.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Test 
+{           	
+	public void method(int x){}
+	
+	public static void main(String[] args) {
+		Short temp = 8;
+				
+		new Test().method(temp);
+	}	
+}   
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it will compile</b>
+
+temp gets auto-unboxed to a short and then gets widened to an int.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Test 
+{           	
+	public void method(int...x, float... y){}
+	
+	public static void main(String[] args) {  		
+		new Test().method(3,3.4f);
+	}	
+}  
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+You cannot have more than 1 varArg in a parameter list.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Test 
+{           	
+	public void method(float... varArgs){}
+	
+	public static void main(String[] args) {  		
+		new Test().method(3.3,3);
+	}	
+}  
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+Double getting passed to float. If it was changed to 
+
+	<i>new Test().method(3.3f,3);</i>
+	
+It would compile OK.
+
+<b><u>Exam Tip</u></b>
+This may look like is is testing your knowledge of varArgs, but it is also testing your knowledge
+that a double cannot be passed to a float. Watch out for this!
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Test 
+{           	
+	public void method(int... varArgs){}
+	
+	public static void main(String[] args) {  		
+		new Test().method();
+	}	
+}  
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it will compile</b>
+
+Remember, varArgs is <i><b>ZERO</i><b> to many arguments!
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Test 
+{           	
+	public void method(int x, int... varArgs){}
+	
+	public static void main(String[] args) {  		
+		new Test().method(1);
+	}	
+}  
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it will compile</b>
+
+Remember, varArgs is <i><b>ZERO</i><b> to many arguments!
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+interface Color
+{
+	public void method(){};
+};
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+An interface can have only abstract methods, no concrete methods allowed.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+abstract interface Color{};
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, it will compile</b>
+
+END QUESTION
+QUESTION 
+Will the following class compile?
+
+public class Test 
+{           
+	private final int x = 0;
+	
+	Test()
+	{
+		int y = x++;
+	}
+}  
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+Sorry, this is a sneaky one. x is a final variable and because final variables cannot be changes the increment and decrement operators cannot be used on them.
+
+<b><u>Exam Tip</u></b>
+You may see this buried in complicated code, so keep an eye out for it.
+END QUESTION
+QUESTION 
+Will the following class compile?
+
+public class Test 
+{           
+	private final int x = 0;
+	
+	Test()
+	{
+		x = 3;
+	}
+}  
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, it will NOT compile</b>
+
+Declaring a variable with the <i>final</i> keyword makes it impossible to reinitialize that variable once it has been initialized with an explicit value.
+END QUESTION
+QUESTION 
+Will the following class compile?
+
+public class Test 
+{           
+	private final int x = 0;
+	
+	Test()
+	{
+		x = 3;
+	}
+}  
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Correct answer is 2, it will NOT compile</b>
+
+Declaring a variable with the <i>final</i> keyword makes it impossible to reinitialize that variable once it has been initialized with an explicit value.
+END QUESTION
+QUESTION 
+Will the following class compile?
+
+public class Test 
+{           
+	private final int x;
+	
+	Test()
+	{
+		x = 3;
+	}
+}  
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Correct Answer is option 1, Yes, its OK</b>
+
+Because the instance variable x has not been assigned this is OK.
+END QUESTION
+QUESTION 
+What is the output?
+
+public class Test 
+{           
+	static{ 
+    	System.out.println("First Line");
+    }  
+    
+    static{ 
+    	System.out.println("Second Line");
+    } 
+    
+    public static void main(String[]a){}  
+}  
+OPTIONS
+4
+1. Impossible to know, different each time.
+2. First Line Second Line
+3. Second Line First Line
+4. Nothing
+ANSWER 2
+<b>Correct Answer is option 2, First Line Second Line</b>
+
+Static init blocks run once, when the class is first loaded.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+public class Test 
+{       
+    { 
+    	System.out.println("First Line");
+    }  
+    
+    { 
+    	System.out.println("Second Line");
+    } 
+    
+    public static void main(String[]a) 
+    {}  
+}  
+
+OPTIONS
+4
+1. Impossible to know, different each time.
+2. First Line Second Line
+3. Second Line First Line
+4. Nothing
+ANSWER 4
+<b>Correct Answer is option 4, Nothing is output</b>
+
+Instance init blocks run every time a class is created and none are getting created here.
+
+If we inserted 
+
+new Test();
+
+into main() then option 2 would be correct "First Line Second Line"
+
+END QUESTION
+QUESTION 
+What is the output?
+
+public class Test 
+{       
+    { 
+    	System.out.println("First Line");
+    }  
+    
+    static{ 
+    	System.out.println("Second Line");
+    } 
+    
+    public static void main(String[]a) 
+    {
+    	new Test();
+    }  
+}  
+
+OPTIONS
+3
+1. Impossible to know, different each time.
+2. First Line Second Line
+3. Second Line First Line
+ANSWER 3
+<b>Correct Answer is option 3, Second Line First Line</b>
+
+Static init blocks run once, when the class is loaded, then the instance init block runs.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+public class Test 
+{       
+    { 
+    	System.out.println("First Line");
+    }  
+    
+    { 
+    	System.out.println("Second Line");
+    } 
+    
+    public static void main(String[]a) 
+    {
+    	new Test();
+    }  
+}  
+
+OPTIONS
+3
+1. Impossible to know, different each time.
+2. First Line Second Line
+3. Second Line First Line
+ANSWER 2
+<b>Correct Answer is option 2, First Line Second Line</b>
+
+The order in which instance init blocks appear in a class is important, if a class has more
+than one like this example they will run in the order they appear.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+public class Test 
+{   
+    static
+    { 
+    	System.out.println(Test.string+" "+Test.integer);
+    }  
+  
+    final static String string="1";  
+    final static Integer integer=new Integer(1);  
+  
+    public static void main(String[]a) {}  
+}  
+OPTIONS
+4
+1. 1 null
+2. null 1
+3. 1 1
+4. null null
+ANSWER 1
+<b>Correct Answer is option 1, 1 null</b>
+
+string is a compile time constant, so gets called first before the initialization block.
+
+END QUESTION
+QUESTION 
+What is the output?
+
+class A 
+{  
+  void m() throws Exception{  
+     throw new Exception();  
+  }  
+}  
+     
+class B extends A 
+{  
+  void m(){  
+     System.out.println("B");  
+  }  
+}  
+
+class Test {  
+  public static void main(String[] args) 
+  {  
+    A a = new B();
+    B b = new B();  
+    a.m();  
+    b.m();  
+  }  
+}  
+OPTIONS
+3
+1. Compiler error
+2. Runtime Error
+3. B
+ANSWER 1
+<b>Correct Answer is option 1, Compiler error</b>
+
+The compiler can only verify type information and not the Object related information. 
+
+A compilation error is thrown on the line
+
+	a.m();  
+
+The Compiler thinks the method m() is from class A and not class B. 
+
+END QUESTION
+QUESTION 
+What is the output?
+
+int y = 1;
+y = y++;
+System.out.println(y);
+OPTIONS
+4
+1. 0
+2. 1
+3. 2
+4. 3
+ANSWER 2
+<b>Correct Answer is option 2, output is 1</b>
+This question is testing your knowledge of the increment operator.
+
+You may have expected the output to be is 2, but we get 1, 
+
+On the line 
+
+	<i>y = y++;</i>
+
+y is assigned the value of 1 before the increment
+
+END QUESTION
+QUESTION 
+
+What is the output?
+
+public class Test 
+{
+	static int f1(int i) 
+	{  
+		System.out.print(i + ",");  
+		return 0;  
+	} 
+	
+	public static void main (String[] args) 
+	{  
+		int i = 0; 
+		i = i++ + f1(i);
+		System.out.print(i);  
+	}  	
+}
+
+OPTIONS
+4
+1. 0,1
+2. 0,0
+3. 1,0
+4. 1,1
+ANSWER 3
+<b>Correct Answer is option 3, output is 1,0</b>
+
+This question is testing your knowledge of the increment operator.
+
+On the line 
+
+	<i>i = i++ + f1(i);</i>
+
+i is assigned the value of 0 (before the increment) + 0 (which is what is returned from method f1)
+
+so the line breaks down to
+
+	<i>i = 0 + fi(1);</i>
+
+try changing the increment operator to the front ++i and it will return 1,1 
+END QUESTION
+QUESTION 
+
+Will the following code compile?
+
+int[][] blots = new int[3][];
+    	
+Object[] object = new Object[5][5];  
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Correct Answer is option 1, Yes it will compile</b>
+
+You may have been tempted to say no because of the line
+
+Object[] object = new Object[5][5];  
+
+In Java, Arrays are Objects. So, a String array is an Object. And an array of String Arrays is an array of Object. 
+END QUESTION
+QUESTION 
+
+What exception gets thrown from m1?
+
+void m1() throws Exception  
+    {  
+        try  
+        {  
+            throw new IOException();  
+        }  
+        catch (IOException e)  
+        {  
+            throw new SQLException();  
+        }  
+        finally  
+        {  
+            throw new NullPointerException();  
+        }  
+    }  
+
+OPTIONS
+4
+1. IOException
+2. SQLException
+3. NullPointerException 
+4. Runtime error
+ANSWER 3
+<b>Correct Answer is option 3, NullPointerException</b>
+
+The exception thrown in the try block is simply ignored and "overruled" by the exception thrown in the finally block. 
+END QUESTION
+QUESTION 
+
+What is the output?
+
+enum Cars {
+ FORD("Fiesta"), TOYOTA("avensis");
+ String make;
+ Cars(String c) { make = c; }
+ 
+ String getMake()
+ {
+	 return make;
+ }
+} 
+      
+class Foo 
+{  
+  static Cars cars;
+	 
+  public static void main (String [] args)
+  {  
+	  System.out.println(cars.getMake()); 
+  }  
+}  
+
+OPTIONS
+4
+1. Fiesta
+2. Avensis
+3. Compile time error 
+4. Runtime error
+ANSWER 4
+<b>Correct Answer is option 4, Runtime error cars is null</b>
+
+The following would work 
+
+System.out.println(Cars.FORD.getMake()); 
+
+<b><u>Exam Tip</u></b>
+Enum constants are implicitly static. Java allows you to access a static field with an instance reference. But it doesn't matter if the instance is null because the static field belongs to the type, not the instance. 
+END QUESTION
+QUESTION 
+
+What is the output?
+
+enum Cars {
+ FORD("Fiesta"), TOYOTA("Avensis");
+ String make;
+ Cars(String c) { make = c; }
+} 
+      
+class Foo 
+{  
+  static Cars cars;
+	 
+  public static void main (String [] args)
+  {  
+	  System.out.println(cars.FORD.make); 
+  }  
+}  
+
+
+OPTIONS
+4
+1. Fiesta
+2. Avensis
+3. Compile time error : cars is null
+4. Runtime error : cars is null
+ANSWER 1
+<b>Correct Answer is option 1, Fiesta</b>
+
+Enum constants are implicitly static. Java allows you to access a static field with an instance reference. But it doesn't matter if the instance is null because the static field belongs to the type, not the instance. 
+END QUESTION
+QUESTION 
+
+Which line is invalid?
+
+1. long l = 1000;     
+2. double d = 1000;     
+3. Long l1 = 1000;   
+
+OPTIONS
+4
+1. Line 1
+2. Line 2
+3. Line 3
+4. None of them
+ANSWER 3
+<b>Correct Answer is option 3, Line 3 is invalid</b>
+Lines 1 and 2 are OK as the compiler widens the int 1000 to long and double.
+Line 3 is incorrect as the compiler boxes the int value 1000 to Integer first. You cannot then widen Integer to Long, because IS-A fails.
+END QUESTION
+QUESTION 
+
+Which line is invalid?
+
+1. Byte b = 10;    
+2. Short s = 10;    
+3. Character c = 10;    
+4. Integer i = 10;    
+5. Long l = 10;   
+
+OPTIONS
+5
+1. Line 1
+2. Line 2
+3. Line 3
+4. Line 4
+5. Line 5
+ANSWER 5
+<b>Correct Answer is option 5, Line 5 is invalid</b>
+
+This is a tricky question, hopefully the following explanation will explain it.
+
+Java Language Specification explains that you can narrow int to byte, short or char if the int value is constant and in valid range of the target type:
+
+A narrowing primitive conversion may be used if the type of the variable is byte, short, or char, and the value of the constant expression is representable in the type of the variable.
+A narrowing primitive conversion followed by a boxing conversion may be used if the type of the variable is :
+Byte and the value of the constant expression is representable in the type byte.
+Short and the value of the constant expression is representable in the type short.
+Character and the value of the constant expression is representable in the type char. 
+
+END QUESTION
+
+QUESTION 
+
+Given 
+
+byte five = 5;
+
+Which line is valid?
+
+1. Integer a = new Long(2); 
+2. Integer b = (long)2;
+3. Integer c = (byte)4;
+4. Integer d = (byte)five;
+
+OPTIONS
+4
+1. Line 1
+2. Line 2
+3. Line 3
+4. Line 4
+ANSWER 3
+<b>Correct Answer is option 3, Line 3 is valid</b>
+
+You may have been tempted to answer 4 none.
+
+A little background... a literal 4, is a compile time constant. 
+
+And there is no such a thing as a byte compile time constant. So 4 gets boxed to an Integer.
+
+END QUESTION
+
+QUESTION 
+
+Which line is valid?
+
+1. Integer a = new Long(2); 
+2. Integer b = (long)2;
+3. Integer c = (byte)4;
+
+OPTIONS
+4
+1. Line 1
+2. Line 2
+3. Line 3
+4. None
+ANSWER 3
+<b>Correct Answer is option 3, Line 3 is valid</b>
+
+You may have been tempted to answer 4 none.
+
+A little background... a literal 4, is a compile time constant. And there is no such a thing as a byte compile time constant. 
+END QUESTION
+QUESTION 
+
+Is this valid?
+
+Long y = 2; 
+
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+<b>Correct Answer is option 2, No</b>
+
+You cannot box then widen. 2 IS AN integer
+END QUESTION
+QUESTION 
+class Parent {  
+    static void get1() {  
+        System.out.print("Parent get1 ");  
+    }  
+    void get2() {  
+        System.out.print("Parent get2 ");  
+    }  
+    void get() {  
+    	get1();  
+        get2();  
+    }  
+}  
+  
+class Child extends Parent 
+{  	
+    static void get1() {  
+        System.out.print("Child get1 ");  
+    }  
+	
+    void get2() {  
+        System.out.print("Child get2 ");  
+    }  
+}  
+  
+public class Foo {  
+    public static void main(String args[]) {  
+        new Child().get();  
+        System.out.println();  
+    }
+}   
+
+What is the output?
+
+OPTIONS
+4
+1 Child get1 Child get2
+2 Parent get1 Parent get2
+3 Parent get1 Child get2
+4 Child get1 Parent get2
+ANSWER 3
+<b>Correct Answer is option 3, Parent get1 Child get2</b>
+
+You may have been tempted to answer option 1 'Child get1 Child get2'
+
+This is incorrect as get1 is a static method, the version of the static method that gets invoked depends on whether it is invoked from the superclass or the subclass.
+
+
+END QUESTION
+QUESTION 
+
+int[] intArray2 = new int[3];  
+	  char[] charArray = new char[4];  
+	    
+	  charArray[1] = (char)intArray2[4]; 
+
+
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 1
+<b>Correct Answer is option 1, Yes, code is fine </b>
+
+END QUESTION
+QUESTION 
+
+Will the following code compile?
+
+  int[] intArray1;  
+  int[] intArray2 = new int[3];  
+  char[] chatArray = new char[4];  
+    
+  intArray1 = intArray2; 
+  chatArray = intArray1; 
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+<b>Correct Answer is option 2, No </b>
+
+Both int[] and char[] are different objects there is no relationship. 
+
+Keep in mind that this is different from how class arrays work:
+
+An array of Child[] can be assigned to a reference variable pointing to an array of Parent[]. 
+
+
+END QUESTION
+QUESTION 
+
+Will the following code compile?
+
+  int[] intArray1;  
+  int[] intArray2 = new int[3];  
+  char[] chatArray = new char[4];  
+    
+  intArray1 = intArray2; 
+  chatArray = intArray1; 
+
+
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+<b>Correct Answer is option 2, No </b>
+
+Both int[] and char[] are different objects there is no relationship. 
+
+Keep in mind that this is different from how class arrays work:
+
+An array of Child[] can be assigned to a reference variable pointing to an array of Parent[]. 
+
+
+END QUESTION
+QUESTION 
+
+Will the following code compile?
+
+List<Dog> listDog = new ArrayList<Dog>();  
+List<? extends Dog> listExtDog 
+	 = new ArrayList<Dog>();  
+   
+listExtDog  = listDog ;  
+listDog  = listExtDog ; 
+
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+<b>Correct Answer is option 2, No </b>
+
+Don't worry too much if you got this wrong, its is tough question. Here is the explanation.
+
+    List&#60;Dog&#62; listDog
+
+here, listDog can only refer to a list of 'Dog's, and nothing else. No super types, no sub types.
+
+Whereas, when we say
+
+    List&#60;? extends Dog&#62; listExtDog
+
+here, listExtDog can refer to a list of 'Dog's, AND any of its sub types.
+
+So, assigning listDog to listExtDog works and not the reverse as listDog MUST only refer to a list of 'Dog's, and nothing else. No super types, no sub types.
+As listExtDog CAN refer to s sub type this is NOT allowed. 
+
+END QUESTION
+QUESTION 
+public class TestTypes {  
+
+    public void go(double i) {  
+        System.out.println("double");  
+    }     
+    
+    public void go(float... i) {  
+        System.out.println("Float");  
+    }  
+            
+    public static void main(String[] args) {  
+        float b = 1F;  
+        
+        new TestTypes().go(b);             
+    }       
+}  
+
+What is the output?
+
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 double
+4 Float
+ANSWER 3
+<b>Correct Answer is option 3, double </b>
+
+<b><u>Exam Tip</u></b>
+
+Widening beats var-args
+
+END QUESTION
+QUESTION 
+public class TestTypes {  
+
+    public void go(double i) {  
+        System.out.println("double");  
+    }     
+    
+    public void go(Float i) {  
+        System.out.println("Float");  
+    }  
+            
+    public static void main(String[] args) {  
+        float b = 1F;  
+        
+        new TestTypes().go(b);             
+    }       
+}  
+
+What is the output?
+
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 double
+4 Float
+ANSWER 3
+<b>Correct Answer is option 3, double </b>
+
+<b><u>Exam Tip</u></b>
+
+Widening beats boxing.
+
+END QUESTION
+QUESTION 
+public class TestTypes {  
+
+    public void go(Double i) {  
+        System.out.println("Double");  
+    }     
+      
+    public void go(Object... i) {  
+        System.out.println("Object ...");  
+    }  
+      
+    public static void main(String[] args) {  
+        float b = 1F;  
+        
+        new TestTypes().go(b);             
+    }       
+}  
+
+What is the output?
+
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 Double
+4 Object ...
+ANSWER 4
+<b>Correct Answer is option 4, Object ... </b>
+
+float gets boxed to to a Float which IS NOT A Double but IS An OBJECT.
+
+Float is NOT A Double. Float IS A Object.
+END QUESTION
+QUESTION 
+public class TestTypes {  
+
+    public void go(Double i) {  
+        System.out.println("Double");  
+    }     
+      
+    public void go(Object... i) {  
+        System.out.println("Object ...");  
+    }  
+      
+    public static void main(String[] args) {  
+        Float b = 1F;  
+        
+        new TestTypes().go(b);             
+    }       
+}  
+
+What is the output?
+
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 Double
+4 Object ...
+ANSWER 4
+<b>Correct Answer is option 4, Object ... </b>
+
+You may be getting mixed up with primitive types
+
+Float is NOT A Double. Float IS A Object.
+END QUESTION
+QUESTION 
+public class DLSoftwareSolutions 
+{
+	 public static void main(String[] args) 
+	 {  
+		 int[][] a = new int[1][]; 		 
+		 a[0][0] = 1;
+		 a[0][1] = 2;
+		 a[0][2] = 3;
+		 a[0][3] = 4;		 		 
+    	 System.out.println(a[0][1]);   	 
+     }  
+}
+
+What is the output?
+
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 1
+4 2
+ANSWER 2
+<b>Correct Answer is option 2, Runtime Error </b>
+
+Notice that only the first brackets are given a size. Thats OK since the JVM needs to know the size of the object assigned to the variable 'a'.
+
+To get the code to work the following line should be added and 2 is output.
+
+a[0] = new int[4];
+
+
+END QUESTION
+QUESTION 
+public class DLSoftwareSolutions 
+{
+  public static void main(String[] args) 
+  {  
+	int[][] a = new int[][] {{1,2,3},{4,5},{6}}; 		 
+    System.out.println(a[1][1]);   	 
+  }  
+}
+What is the output?
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 2
+4 5
+ANSWER 4
+<b>Correct Answer is option 4, 5 is output </b>
+END QUESTION
+QUESTION 
+public class DLSoftwareSolutions 
+{
+  public static void main(String[] args) 
+  {  
+    int[][] a = new int[][] {{1,2},{3,4}}; 		 
+    System.out.println(a[1][1]);   	 
+  }  
+}
+What is the output?
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 2
+4 4
+ANSWER 4
+<b>Correct Answer is option 4, 4 is output</b>
+END QUESTION
+QUESTION 
+public class DLSOftwareSolutions 
+{
+  public static void main(String[] args) 
+  {  
+	int[][] a = new int[][] {{1,9}}; 		 
+    System.out.println(a[0][1]);   	 
+  }  
+}
+What is the output?
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 9
+4 1
+ANSWER 3
+<b>Correct Answer is option 3, 9 is output </b>
+END QUESTION
+QUESTION 
+public class DLSOftwareSolutions 
+{
+  public static void main(String[] args) 
+  {  
+    int[]  a = new int[][]{{1,2,3,4}}[1];  
+    System.out.println(a[0]);   	 
+  }  
+}
+What is the output?
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 3
+4 4
+ANSWER 2
+<b>Correct Answer is option 2, Runtime Error </b>
+
+We are trying to access the second element of the array which is not defined.
+
+If we changed it to
+
+int[] a = new int[][]{{1,2,3,4}}[0];  
+
+1 would be output
+
+Or if we defined the second array
+
+int[] a = new int[][]{{1,2,3,4},{5,6,7,8}}[1];  
+
+5 would be output
+  
+END QUESTION
+QUESTION 
+public class DLSOftwareSolutions 
+{
+	 public static void main(String[] args) {  
+    	 int[]  a = new int[][]{{1,2,3,4}}[0];  
+    	 System.out.println(a[0]);   	 
+     }  
+}
+
+
+What is the output?
+
+OPTIONS
+4
+1 Compilation error
+2 Runtime Error
+3 0
+4 1
+ANSWER 4
+<b>Correct Answer is option 4, 1 is output </b>
+
+We can break it down like this
+
+    1. int[][] tempArray = new int[][] {{1}};  
+    2. int[] a = tempArray[0]; 
+    
+Outputs 1 
+
+END QUESTION
+QUESTION 
+Is the following code valid?
+
+    int[]  a = new int[1]{}; 
+
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+
+<b>Correct Answer is option 2, No it is not valid</b>
+
+Cannot define dimension expressions ([1]) when an array initializer is provided. 
+
+Either of the following lines would be valid
+
+int[] a = new int[1]; 
+int[] a = new int[]{}; 
+
+END QUESTION
+QUESTION 
+Is the following code valid?
+
+    int[]  a = new int[][]{{1}}[0];  
+
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 1
+
+<b>Correct Answer is option 1, yes it is valid</b>
+
+We can break it down like this
+
+    1. int[][] tempArray = new int[][] {{1}};  
+    2. int[] a = tempArray[0];  
+
+END QUESTION
+QUESTION 
+Class C 
+{
+	public static void main(String[] args) 
+	{
+		int[]a1[]=new int[3][3]; //3
+
+		int a2[4]={3,4,5,6}; //4
+
+		int a2[5]; //5
+	}
+}
+
+What is the result of attempting to compile and run the program?
+
+OPTIONS
+4
+1 compile time error at lines 3,4,5
+2 compile time error at line 4,5
+3 compile time error at line 3
+4 Runtime Exception
+ANSWER 2
+
+<b>Correct Answer is 2 </b>
+
+no value should be specified in the right side brackets when constructing an array
+
+END QUESTION
+QUESTION 
+
+Which method name does NOT follow the JavaBeans standard?
+
+OPTIONS
+4
+1 setCustomer
+2 getCustomer
+3 isValid
+4 deleteCustomer
+ANSWER 4
+
+<b>Correct Answer is 4, deleteCustomer</b>
+
+JavaBeans methods must be named using camelCase and depending on the methods purpose must start with set, get, add or remove. (Objective 1.3)
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+To be searched, an array or list does not need to be sorted.
+
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct. No (Exam Objective 6.1)</b>
+
+To be searched, an array or list must first be sorted.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+To be searched, an array or list must first be sorted.
+
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct. Yes (Exam Objective 6.1)</b>
+END QUESTION
+QUESTION 
+You need to create a class that creates a sorted map.
+
+What might be most suitable to meet this need?
+
+OPTIONS
+4
+1) ArrayList
+2) LinkedList
+3) TreeMap
+4) Vector 
+ANSWER 3
+<b>Option 3 is correct. TreeMap (Exam Objective 6.1)</b>
+END QUESTION
+QUESTION 
+You need to create a class that has fast access and assures no duplicates.
+
+What might be most suitable to meet this need?
+
+OPTIONS
+4
+1) ArrayList
+2) LinkedList
+3) HashSet
+4) Vector 
+ANSWER 3
+<b>Option 3 is correct. HashSet (Exam Objective 6.1)</b>
+END QUESTION
+QUESTION 
+You need to create a class that will have fast iteration and fast random access
+
+What might be most suitable to meet this need?
+
+OPTIONS
+4
+1) ArrayList
+2) LinkedList
+3) HashSet
+4) Vector 
+ANSWER 1
+<b>Option 1 is correct. ArrayList (Exam Objective 6.1)</b>
+END QUESTION
+QUESTION 
+Will this code compile successfully? 
+
+List<Object> list1 = null;
+List<Number> list2 = null;
+list1 = list2;
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+
+<b>Option 2. The correct answer is NO (Exam Objectives 6.3 and 6.4)</b>
+
+Polymorphism applies to the "base" type of the collection: 
+
+	List&#60;String&#62; myList = ArrayList&#60;String&#62;();
+
+We were able to assign an ArrayList to a List reference, because List is a super type of ArrayList.
+
+The rule is, If you declare List&#60;Foo&#62; foo, then whatever you assign to the foo reference MUST be of the generic type&#60;Foo&#62;. Not a subtype of Foo. Not a supertype of Foo. Just Foo.
+
+	List&#60;Foo&#62; foo = ArrayList&#60;Foo&#62;(); 
+	
+END QUESTION
+QUESTION 
+Will this code compile successfully? 
+
+List<Object> list1 = null;
+List<Number> list2 = null;
+list2 = list1;
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+<b>The correct answer is NO (Exam Objectives 6.3 and 6.4)</b>
+
+Polymorphism applies to the "base" type of the collection: 
+
+	List&#60;String&#62; myList = ArrayList&#60;String&#62;();
+
+We were able to assign an ArrayList to a List reference, because List is a super type of ArrayList.
+
+The rule is, If you declare List&#60;Foo&#62; foo, then whatever you assign to the foo reference MUST be of the generic type &#60;Foo&#62;. Not a subtype of Foo. Not a supertype of Foo. Just Foo.
+
+	List&#60;Foo&#62; foo = ArrayList&#60;Foo&#62;(); 
+	
+END QUESTION
+QUESTION 
+What happens when this code is compiled and executed?
+
+String dlSoftwareSolutions = null;
+File file = new File(dlSoftwareSolutions);
+System.out.println(file.getName());
+OPTIONS
+4
+1. It prints null.
+2. NullPointerException at second line.
+3. NullPointerException at third line.
+4. Compilation fails.
+ANSWER 2
+<b>The correct answer is 2 (Exam Objectives 3.2, java.io)</b>
+
+A NullPointerException is thrown if the pathname argument is null.
+
+The File class isn't used to actually read or write data; its used to work at a higher level, making new empty files, searching for files, deleting files, making directories and working with paths.
+
+The File class is one of several java.io classes you need to understand, they are FileRedaer, BufferedReader, FileWriter, BufferedWriter, PrintWriter and Console.
+
+END QUESTION
+QUESTION 
+If you compile and run this program, will there be a file called aFile.txt in the current directory?
+
+import java.io.*;
+
+class DLSSWriter{
+	public static void main(String [] args)
+	{
+		File file = new File("aFile.txt");		
+	}
+}
+OPTIONS
+2
+1. Yes.
+2. No.
+ANSWER 2
+<b>The correct answer is 2 (Exam Objectives 3.2, java.io</b>)
+
+When you make a new instance of File, you are not yet making an actual file, you are just creating a file name.
+
+The File class isn't used to actually read or write data; its used to work at a higher level, making new empty files, searching for files, deleting files, making directories and working with paths.
+
+The File class is one of several java.io classes you need to understand, they are FileRedaer, BufferedReader, FileWriter, BufferedWriter, PrintWriter and Console.
+
+
+	
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Run {
+public static void main(String[] args) {
+    new Thread() {
+        public void run() {        	
+            byte g = (byte)890;  
+            switch(g){  
+             case 23:  
+            	 System.out.println("23");
+            	 break;
+             case (byte)890:  
+            	 System.out.println("128");
+            }             
+        }
+    }.start();}}
+OPTIONS
+2
+1) Yes
+2) No, 890 cannot fit into a byte.
+ANSWER 1
+<b>Option 1 is correct. It will compile..</b> 
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Animal  
+{
+	public void printYourself()
+	{ 
+		System.out.println("Animal");
+	}
+}  
+class Horse extends Animal{  
+    public void printYourself()
+    {  
+        super.printYourself();                    
+        System.out.println("Horse");                        
+    }  
+}  
+public class TestAnimal{  
+    public static void main(String args[])
+    {  
+        Animal a=new Horse();  
+        a.printYourself();  
+    }        
+}  
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct. It will compile.</b> 
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+interface Fish {}  
+
+class B {} 
+ 
+class Bluegill {} 
+ 
+public class MainClass 
+{  
+  public static void main(String[] args) 
+  {  
+    Bluegill b = new Bluegill(); 
+     
+    if (b instanceof Fish) 
+      System.out.print("b-f "); 
+      
+    if(b instanceof B) 
+      System.out.print("B"); 
+  }
+}      
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct. It will not compile.</b> 
+
+When comparing classes, you can only use instanceof to check for two classes in the same hierarchy. 
+
+So the second check (b instanceof B) is clearly rejected at compile time because the compiler can detect that under no circumstance can a Bluegill be a B.
+
+However, the first check (b instanceof Fish) is not a check between two classes - it's between a class and an interface. Interfaces don't fit in the Class hierarchy exactly as classes do. A Class at any level could concievably implement an interface. Because of those relaxed rules, it IS possible for a Bluegill object to also be a Fish. 
+
+The compiler allows this check to proceed.
+
+To help understand this point, consider that you might subclass Bluegill at some point and the subclass might actually implement Fish. Then the check would actually work. 
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class C 
+{ 
+	String doStuff() throws FileNotFoundException 
+	{
+		return "c";
+	} 
+}   
+       
+class D extends C 
+{ 
+	String doStuff() 
+		throws NumberFormatException 
+	{
+		return "d";
+	} 
+ }   
+ 
+class E extends C 
+{ 
+	String doStuff() 
+		throws NumberFormatException, 
+				FileNotFoundException 
+	{
+		return "e";
+	}
+}        
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct. It will compile.</b> 
+
+Class D has removed the checked exception, which is OK and is throwing a new unchecked exception NumberFormatException, which is OK
+Class E is throwing a new unchecked exception NumberFormatException, which is OK
+
+<b><u>Exam Tip</u></b>
+
+An overridden method can reduce or eliminate an exception and must not throw new or broader exceptions
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class C 
+{ 
+  String doStuff() throws FileNotFoundException 
+  {
+    return "c";
+  } 
+}   
+           
+class D extends C 
+{ 
+  String doStuff() throws NumberFormatException 
+  {
+    return "d";
+  } 
+}   
+     
+class E extends D 
+{ 
+  String doStuff() 
+     throws NumberFormatException, 
+       FileNotFoundException 
+  {
+    return "e";
+  }
+}        
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct. It will not compile.</b>
+
+Class E needs to remove the checked exception FileNotFoundException. 
+
+An overridden method must not throw new or broader exceptions
+
+<b><u>Exam Tip</u></b>
+
+An overridden method can reduce or eliminate an exception and must not throw new or broader exceptions
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+    protected class A{}
+    abstract class B{}       
+    public class C {}       
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct. It will not compile.</b>
+
+protected class A{} is incorrect.
+
+<b><u>Exam Tip</u></b>
+
+Only private, abstract and public specifiers are allowed.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+    private class A{}
+    abstract class B{}       
+    public class C {}       
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct. It will not compile.</b>
+
+private class A{} is incorrect.
+
+<b><u>Exam Tip</u></b>
+
+Only private, abstract and public specifiers are allowed.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+    final class A{}
+    abstract class B{}       
+    public class C {}       
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct. It will compile OK.</b>
+
+<b><u>Exam Tip</u></b>
+
+Only private, abstract and public specifiers are allowed.
+
+END QUESTION
+QUESTION 
+What is the output when you run the following code?
+
+class Top {
+	static int x = 1;
+	public Top() 
+	{ 
+		x *= 3 ;
+	}
+}
+
+class Middle extends Top {
+	public Middle()
+	{
+		x += 1; 
+	}
+	public static void main(String [] args) 
+	{
+		Middle m = new Middle();
+		System.out.println(x);
+	}
+} 
+OPTIONS
+4
+1) 1
+2) 2
+3) 3
+4) 4
+ANSWER 4
+<b>Option 4 is correct. 4 is printed.</b>
+
+END QUESTION
+QUESTION 
+What is the output when you run the following code?
+public class DLSoftwareSolutions   
+{  
+    int i=1;  
+    public int getI()
+    {
+    	return i;
+    }  
+    public static void main(String s[])  
+    {  
+    	DLSoftwareSolutions ga=new SubClass();  
+        System.out.println(ga.i + " " + ga.getI());  
+    }  
+}  
+class SubClass extends DLSoftwareSolutions  
+{  
+    int i=2;  
+    public int getI(){return i;}  
+}    
+OPTIONS
+4
+1) 1 2
+2) 2 2
+3) 1 1
+4) 2 1
+ANSWER 1
+<b>Option 1 is correct. 1 2 is printed.</b>
+This question is testing your understanding that Instance variables (int i) aren't overrided.  
+
+END QUESTION
+QUESTION 
+What is the output when you run the following code?
+
+public class C 
+{              
+   public static void main(String[] argv)
+   {  
+        new C().callMethod(4);  
+   }  
+   public static void callMethod(Integer... i)
+   {  
+        System.out.println("Wrapper");  
+   }  
+   public static void callMethod(int... i)
+   {  
+        System.out.println("Primtive");  
+   }       
+ }      
+OPTIONS
+4
+1) Wrapper
+2) Primtive
+3) Compiler error.
+4) Runtime Error
+ANSWER 3
+<b>Option 3 is correct. Compiler error.</b>
+
+Compiler can't choose between primitive and boxed type if combined with varargs. 
+
+END QUESTION
+QUESTION 
+What is the output when you run the following code?
+
+public class DLSoftwareSolutions 
+{              
+         public static void main(String args[])
+         {  
+        	 Number n = 5; 
+        	 
+        	 if (n instanceof Integer)
+        	 {
+        		 System.out.println("Integer");
+        	 }
+        	 else if (n instanceof Number)
+        	 {
+        		 System.out.println("Number");
+        	 }
+         }     
+    }  
+OPTIONS
+4
+1) Integer
+2) Number
+3) Compiler error, Number is an abstract class
+4) Compiler error, Can't instanceof an abstract class
+ANSWER 1
+<b>Option 1 is correct. outputs Integer</b>
+
+5 is an int, so is auto-boxed into an Integer.
+END QUESTION
+QUESTION 
+Will the following compile?
+
+class David 
+{  
+	String method1(short temp) 
+	{ 
+		return "X"; 
+	} 
+	 
+	String method1(short... temp) 
+	{ 
+		return "W"; 
+	}  
+}  
+class Test 
+{  
+	public static void main(String [] args) 
+	{  
+		System.out.println(
+			new David().method1(7));  
+	} 
+}  
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct. It wont compile</b>
+
+If
+
+	System.out.println(new David().method1(7));
+	
+is changed to
+
+	System.out.println(new David().method1((Short)7));	
+	
+It will compile.	 
+
+END QUESTION
+QUESTION 
+What is the output when you run the following code?
+
+public class Run {
+public static void main(String[] args) {
+    new Thread() {
+        public void run() {
+        	
+            byte g = 23;  
+            switch(g){  // line 1
+             case 23:  
+            	 System.out.println("23");
+            	 break;
+             case (byte)128:  // line 2
+            	 System.out.println("128");
+            }             
+        }
+    }.start(); // line 3
+}}
+OPTIONS
+4
+1) compiler error line 1.
+2) compiler error line 2.
+3) compiler error line 3.
+4) outputs 23
+ANSWER 4
+<b>Option 4 is correct. outputs 23</b>
+If the cast on line 2 is omitted we get "Type mismatch: cannot convert from int to byte"
+END QUESTION
+QUESTION 
+You need to create a class that will store unique object elements. You do not need to sort these elements but they must be unique.
+
+What interface might be most suitable to meet this need?
+
+OPTIONS
+4
+1) Set
+2) List
+3) Map
+4) Vector 
+ANSWER 1
+<b>Option 1 is correct. Set
+END QUESTION
+QUESTION 
+Which of the following will output -4.0
+
+OPTIONS
+4
+1) System.out.println(Math.floor(-4.7));
+2) System.out.println(Math.round(-4.7));
+3) System.out.println(Math.ceil(-4.7));
+4) System.out.println(Math.min(-4.7)); 
+ANSWER 3
+<b>Option 3 is correct. System.out.println(Math.ceil(-4.7));</b>
+
+Options 1 and 2 will produce -5 and option 4 will not compile because the min method requires 2 parameters. 
+END QUESTION
+QUESTION 
+What will happen if you attempt to compile and run the following code?
+
+class Base {}
+class Sub extends Base {}
+class Sub2 extends Base {}
+public class Test{
+    public static void main(String argv[]){
+	Base b=new Base();
+	Sub s=(Sub) b;
+}}
+OPTIONS
+3
+1) Compile and run without error
+2) Compile time error
+3) Runtime Exception 
+ANSWER 3
+<b>Option 3 is correct. Runtime Exception </b>
+You cannot cast a Base object to a Sub object, if it is NOT a Sub object.
+Without the cast to sub you would get a compile time error. 
+END QUESTION
+QUESTION 
+Which of the following statements are true?
+
+OPTIONS
+4
+1) Methods cannot be overriden to be more private
+2) Static methods cannot be overloaded
+3) Private methods cannot be overloaded
+4) An overloaded method cannot throw exceptions not checked in the base class
+ANSWER 1
+<b>Option 1 is correct. Methods cannot be overriden to be more private
+
+END QUESTION
+QUESTION 
+Which of the following best describes the use of the synchronized keyword?
+
+OPTIONS
+3
+1) Ensures only one thread at a time may access a method or object
+2) Ensures that two or more processes will start and end at the same time
+3) Ensures that two or more Threads will start and end at the same time
+ANSWER 1
+<b>Option 1 is correct. </b>
+
+Ensures only one thread at a time may access a method or object
+END QUESTION
+QUESTION 
+Which of the following is the correct syntax for suggesting that the JVM performs garbage collection
+
+OPTIONS
+4
+1) System.free();
+2) System.setGarbageCollection();
+3) System.out.gc();
+4) System.gc();
+ANSWER 4
+<b>Option 4 is correct. </b>
+
+System.gc();
+END QUESTION
+QUESTION 
+What will happen when you attempt to compile and run the following code
+
+public class Test
+{
+    public static void main(String argv[])
+    {
+	    Test h = new Test();
+    }
+
+    protected Test()
+    {
+	    for(int i =0; i <100; i ++)
+	    {
+	        System.out.println(i);
+		}
+    }
+}
+OPTIONS
+4
+1) Compilation error: Constructors cannot be declared protected
+2) Run time error: Constructors cannot be declared protected
+3) Compilation and running with output 0 to 100
+4) Compilation and running with output 0 to 99
+ANSWER 4
+<b>Option 4 is correct. Compilation and running with output 0 to 99 </b>
+END QUESTION
+QUESTION 
+Under what circumstances might you use the yield method of the Thread class
+
+OPTIONS
+4
+1) To call from the currently running thread to allow another thread of the same or higher priority to run
+2) To call on a waiting thread to allow it to run
+3) To allow a thread of higher priority to run
+4) To call from the currently running thread with a parameter.
+ANSWER 1
+<b>Option 1 is correct. To call from the currently running thread to allow another thread of the same or higher priority to run</b>
+
+Option 3 looks plausible but there is no guarantee that the thread that grabs the cpu time will be of a higher priority.
+END QUESTION
+QUESTION 
+For a class defined inside a method, what rule governs access to the variables of the enclosing method?
+
+OPTIONS
+4
+1) The class can access any variable
+2) The class can only access static variables
+3) The class can only access transient variables
+4) The class can only access final variables
+ANSWER 4
+<b>Option 4 is correct. The class can only access final variables </b>
+END QUESTION
+QUESTION 
+How does the set collection deal with duplicate elements?
+
+OPTIONS
+4
+1) An exception is thrown if you attempt to add an element with a duplicate value
+2) The add method returns false if you attempt to add an element with a duplicate value
+3) A set may contain elements that return duplicate values from a call to the equals method
+4) Duplicate values will cause an error at compile time
+ANSWER 2
+<b>Option 2 is correct. </b>
+
+The add method returns false if you attempt to add an element with a duplicate value
+END QUESTION
+
+QUESTION 
+Is the following statement true?
+
+There are only three different Inner classes:
+
+1)	Regular Inner Class
+2)	Static Inner Class
+3)	Method Local Inner Class
+OPTIONS
+2
+1) True
+2) False
+ANSWER 2
+<b>The statement is false.</b>
+
+You can also have an Anonymous Inner Class
+
+END QUESTION
+QUESTION 
+Which statement about mixing Generic code with non generic code is incorrect?
+
+OPTIONS
+3
+1)	It is NOT possible to pass a typed collection to an old non-generic method
+2)	It is possible to pass a typed collection and add something to it via an non-generic method
+3)	Using a non-generic method compiles with warnings
+ANSWER 1
+<b>Option 1 is incorrect</b>
+
+It <b>is</b> possible to pass a typed collection to an old non-generic method
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+Transient instance variables are never serialized
+OPTIONS
+2
+1) True
+2) False
+ANSWER 1
+<b>The statement is true.</b>
+
+Transient instance variables are never serialized
+
+END QUESTION
+QUESTION 
+Which statement about the appropriate use of assertions is incorrect?
+
+OPTIONS
+4
+1)	Dont use assertions to validate arguments to a public method
+2)	Do use assertions to validate arguments to a private method
+3)	Do use assertions to validate command-line arguments
+4)	Do use assertions even in public methods, to check for cases that you know are never supposed to happen
+ANSWER 3
+<b>Option 3 is the correct answer.</b>
+
+Dont use assertions to validate command-line arguments.
+END QUESTION
+QUESTION 
+
+Is the following statement true?
+
+Assertions are enabled by default
+
+OPTIONS
+2
+1) True
+2) False
+ANSWER 2
+<b>The statement is false.</b>
+
+Assertions are <b>DISABLED</b> by default 
+
+END QUESTION
+QUESTION 
+Which statement about exceptions is incorrect?
+OPTIONS
+4
+1)	A try without a catch or a finally is not allowed.
+2)	code in between try and catch is not allowed.
+3)	In the catch block a specific exception has to come after a general (supertype) exception (otherwise compile error).
+4)	Any method that might throw an exception (unless it is a runtime exception) has to be declared.
+ANSWER 3
+<b>Option 3 is incorrect.</b> 
+
+In the catch block a specific exception has to come <b>before</b> a general (supertype) exception (otherwise compile error).
+END QUESTION
+QUESTION 
+Which statement about widening and boxing is incorrect?
+OPTIONS
+4
+1)	Primitive widening uses the smallest method argument possible
+2)	Used individually, boxing and var-args are compatible with overloading
+3)	You cannot widen from one wrapper type to another (IS-A fails)
+4)	You cannot box and widen
+ANSWER 4
+<b>Option 4 is incorrect.</b>
+
+You <b>CAN</b> box and widen.
+END QUESTION
+QUESTION 
+Which statement about constructors is incorrect?
+
+OPTIONS
+4
+1) You cannot make a call to an instance method, or access an instance variable, until after the super constructor runs
+2) Only static variables and methods can be accessed as part of the call to super() or this().
+3) Abstract classes have constructors, and those constructors are always called when a concrete subclass is instantiated
+4) Interfaces have constructors.
+ANSWER 4
+<b>Option 4 is incorrect.</b>
+
+Interfaces <b>DO NOT</b> have constructors.
+END QUESTION
+QUESTION 
+Which statement about constructors is incorrect?
+
+OPTIONS
+4
+1) Constructors can use any access modifier, including private
+2) The constructor name must match the name of the class
+3) Constructors must NOT have a return type
+4) Its illegal to have a method with the same name as the class
+ANSWER 4
+<b>Option 4 is incorrect.</b>
+
+Its <b>LEGAL</b> to have a method with the same name as the class
+END QUESTION
+QUESTION 
+
+Is the following statement true?
+
+You can override a method and change the return type as long as the return type is a subclass of the one declared in the overridden method
+
+OPTIONS
+2
+1) True
+2) False
+ANSWER 1
+<b>Option 1 is correct. The statement is true </b>
+
+END QUESTION
+QUESTION 
+
+Which statement about overloading a method is incorrect?
+
+OPTIONS
+4
+1) Overloaded methods have the same name
+2) Overloaded methods must change the argument list
+3) Overloaded methods cannot change the return type 
+4) Overloaded methods can change the access modifier
+ANSWER 3
+<b>Option 3 is incorrect.</b>
+
+Overloaded methods <b>CAN</b> change the return type 
+
+END QUESTION
+QUESTION 
+
+Which statement about overriding a method is incorrect?
+
+OPTIONS
+4
+1) You cannot override a method marked final
+2) You cannot override a method marked static
+3) If a method is not visible it cannot be inherited.
+4) An overriding method cannot be final
+ANSWER 4
+<b>Option 4 is incorrect.</b>
+
+An overriding method <b>CAN</b> be final</b>
+
+An example is
+
+class X
+{
+	public void fred(){};
+}
+
+
+class A extends X { 
+	final public void fred(){};
+}
+
+END QUESTION
+QUESTION 
+
+Which statement about overriding a method is incorrect?
+
+OPTIONS
+3
+1) The access level CAN be less restrictive than that of the overridden method
+2) Trying to override a final method will give a compile error
+3) The overriding method cannot throw narrower or fewer exceptions.
+ANSWER 3
+<b>Option 3 is incorrect.</b> 
+
+The overriding method <b>CAN</b>  throw narrower or fewer exceptions.
+
+END QUESTION
+QUESTION 
+
+Which statement about enums is incorrect?
+
+OPTIONS
+2
+1) Enum constructors cannot be overloaded
+2) The values of an enum can be considered as constants (public final static). 
+ANSWER 1
+<b>Option 1 is incorrect.</b>
+
+Enum constructors <b>CAN</b> be overloaded 
+
+END QUESTION
+QUESTION 
+
+Which statement about enums is incorrect?
+
+OPTIONS
+4
+1) An enum has an ordinal() method returning its position in the enum declaration.
+2) An enum has an valueOf methode to convert a String to the corresponding enum value. 
+3) Enums can have constructors that can be invoked directly 
+4) Enum constructor can only be private or default
+ANSWER 3
+<b>Option 3 is incorrect.</b>
+
+Enums can have constructors but can <b>never</b> be invoked directly 
+
+END QUESTION
+QUESTION 
+
+Which statement about enums is incorrect?
+
+OPTIONS
+4
+1) Enums can have instance variables, methods and constructors
+2) An enum does not have to start with the declaration of values
+3) A constructor of an enum cannot access a non-final static field
+4) The compiler doesent add a no-argument constructor, if there is another constructor
+ANSWER 2
+<b>Option 2 is incorrect.</b>
+
+An enum <b>has</b> to start with the declaration of values </b>
+
+END QUESTION
+QUESTION 
+Which statement about abstract classes is incorrect?
+OPTIONS
+4
+1) An abstract method is a method that has been declared but not implemented
+2) In there is one abstract method then the class has to be declared abstract
+3) The first concrete subclass must implement all abstract methods of the super-class
+4) If it extends another abstract class it has to define or implement the abstract methods
+ANSWER 4
+<b>Option 4 is incorrect</b>
+
+If an abstract class extends another abstract class it <b>does not</b> have to define or implement the abstract methods 
+
+END QUESTION
+QUESTION 
+Which statement is incorrect?
+OPTIONS
+3
+1) final methods: can be overridden in a subclass
+2) final arguments of methods: cannot be changed (reassigned) a new value inside the method
+3) final class: cannot be sub-classed
+ANSWER 1
+<b>Option 1 is incorrect</b>
+
+Final methods: <b>cannot</b> be overridden in a subclass 
+
+END QUESTION
+QUESTION 
+Which statement about interfaces is incorrect?
+OPTIONS
+4
+1) All methods are by default public abstract although it doesnt have be mentioned
+2) All variables are protected, static and final by default
+3) Because interface methods are abstract, they cannot be marked final, strictfp or native
+4) An interface can extend one or more other interfaces
+ANSWER 2
+<b>Option 2 is incorrect</b>
+
+All variables are public, static and final by default 
+
+END QUESTION
+QUESTION 
+Which statement about identifiers is incorrect?
+OPTIONS
+4
+1) Must start with a letter, a currency character($), or a connecting character (_).
+2) Cant start with a number
+3) No limit of the number of characters of an identifier
+4) Are not case sensitive
+ANSWER 4
+<b>Option 4 is incorrect</b> 
+
+Identifiers ARE case sensitive 
+
+END QUESTION
+QUESTION 
+Which statement about source file declaration rules is incorrect?
+OPTIONS
+4
+1)	There can be only one public class per source code file
+2)	Comments can appear at the beginning or end of any line in the source code file
+3)	If there is a public class in a file, the name of the file must match the name of the public class.
+4)	A file can have only one nonpublic class
+ANSWER 4
+<b>Option 4 is incorrect</b>
+
+A file can have more than one nonpublic class 
+
+END QUESTION
+QUESTION 
+Given 
+
+public class DLSoftwareSolutions 
+{
+    public static void main(String args[])
+    {
+      int[] x = new int[5];
+      System.out.println(x[5]);
+    }
+}
+
+What will happen when you compile and run the given code?
+
+OPTIONS
+4
+1) Compile time error
+2) Compile and print 0
+3) Compile and output of null
+4) Compiles but gives a Runtime Exception 
+ANSWER 4
+<b>Option 4 is correct, Compiles but gives Runtime Exception </b>
+
+It compiles but raises a runtime exception (java.lang.ArrayIndexOutOfBoundsException)
+
+END QUESTION
+QUESTION 
+What is the result of attempting to compile and run the program?
+
+public static void main (String args[]) {
+   int[]a1[]=new int[3][3]; //3
+   int a2[4]={3,4,5,6}; //4
+   int a2[5]; //5
+}
+  
+OPTIONS
+4
+1) Compile time error at lines 3,4,5
+2) Compile time error at line 4,5
+3) Compile time error at line 3
+4) Run time Exception
+ANSWER 2
+<b>Option 2 is correct, compile time error at line 4,5</b>
+
+No value should be specified in the right side of brackets when constructing an array
+
+END QUESTION
+QUESTION 
+Which operator is used to perform bitwise inversion in Java.
+   
+OPTIONS
+4
+1) ~
+2) !
+3) &
+4) |
+ANSWER 1
+<b>Option 1 is correct, ~</b>
+END QUESTION
+QUESTION 
+Which of the following are correct. Select the one correct answer.
+OPTIONS
+4
+1) An import statement, if defined, must always be the first non-comment statement of the file.
+2) private members are accessible to all classes in the same package.
+3) An abstract class can be declared as final.
+4) Local variables cannot be declared as static.
+ANSWER 4
+<b>Option 4 is correct</b>
+
+Local variables cannot be declared as static.
+END QUESTION
+QUESTION 
+Which method defined in Integer class can be used to convert an Integer object to primitive int type. 
+OPTIONS
+4
+1) valueOf
+2) intValue
+3) getInt
+4) getInteger
+ANSWER 2
+<b>Option 2 is correct, intValue.</b>
+END QUESTION
+QUESTION 
+Which one is true about interfaces.
+OPTIONS
+2
+1) Methods declared in interfaces are implicitly private.
+2) Variables declared in interfaces are implicitly public, static, and final.
+ANSWER 2
+<b>Option 2 is correct</b>
+
+Variables declared in interfaces are implicitly public, static, and final.
+END QUESTION
+QUESTION 
+Which keyword when applied on a method indicates that only one thread should execute the method at a time. 
+OPTIONS
+4
+1) transient
+2) synchronized
+3) native
+4) static
+ANSWER 2
+<b>Option 2 is correct, synchronized</b>
+END QUESTION
+QUESTION 
+What is the name of the Collection interface used to represent elements in a sequence 
+(in a particular order)
+OPTIONS
+4
+1) Collection
+2) Set
+3) List
+4) Map
+ANSWER 3
+<b>Option 3 is correct, List</b>
+END QUESTION
+QUESTION 
+Which one of these classes implement the Collection interface SortedMap. 
+OPTIONS
+4
+1) HashMap
+2) Hashtable
+3) TreeMap
+4) HashSet
+ANSWER 3
+<b>Option 3 is correct, TreeMap</b>
+END QUESTION
+QUESTION 
+Which declaration of the main method is correct?
+OPTIONS
+4
+1) public static int main(char args[])
+2) public static void main(String args[])
+3) public static void MAIN(String args[])
+4) public static void main(String args)
+ANSWER 2
+<b>Option 2 is correct, public static void main(String args[])</b>
+END QUESTION
+QUESTION 
+Will this compile?
+class A extends Exception{}
+class B extends A{}
+class C {void go() throws B{}}
+class D extends C {void go() throws B{}}
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct, compiles OK</b>
+END QUESTION
+QUESTION 
+Will this compile?
+
+class A extends Exception{}
+class B extends A{}
+class C {void go() throws B{}}
+class D extends C {void go() throws Exception{}}
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct, Compilation error on class D</b>
+
+An overriding method cannot throw a broader exception than the method it is overriding.
+END QUESTION
+QUESTION 
+Given:
+
+class Colour
+{
+	public String name;
+	public Colour(String n)
+	{
+		name = n;
+	}
+}
+class Test{
+	
+	public static void main(String[] args)
+	{		
+		Object test = new Colour("RED");
+		System.out.prntln(test.name);
+	}		
+}
+OPTIONS
+3
+1) Exception is thrown
+2) Compilation error
+3) Outputs RED
+ANSWER 2
+<b>Option 2 is correct, Compilation error</b>
+
+We are using a reference type of Object, we can only access those members defined in Object, name is not one of those.
+END QUESTION
+QUESTION 
+Is this statement true?
+
+A method local inner class cannot be marked public
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct, Yes a method local inner class cannot be marked public</b>
+
+A method local inner class cannot be made public or static, as it is a local variable and cant be public.
+END QUESTION
+QUESTION 
+Is this statement true?
+
+A method local inner class can be marked public
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct, A method local inner class cannot be marked public</b>
+
+A method local inner class cannot be made public or static, as it is a local variable and cant be public.
+END QUESTION
+QUESTION 
+Is this statement true?
+
+A method local inner class cannot be marked abstract
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct, A method local inner class can be marked abstract</b>
+
+This is  something we would imagine you would never do. 
+ 
+It means a subclass of the method local inner class must be created if the abstract class is ever to be used.
+END QUESTION
+QUESTION 
+Is this statement true?
+
+A method local inner class can be marked abstract
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct, A method local inner class can be marked abstract</b>
+
+This is  something we would imagine you would never do. 
+ 
+It means a subclass of the method local inner class must be created if the abstract class is ever to be used.
+END QUESTION
+QUESTION 
+What statement is incorrect?
+OPTIONS
+4
+1) ArrayList: Fast iteration and fast random access
+2) Vector: A slower ArrayList as it has synchronized methods.
+3) HashSet : Slow Access, assures no duplicates and provides ordering
+4) TreeSet: No duplicates; iterates in sorted order
+ANSWER 3
+<b>Option 3 is the correct answer, this statement is incorrect</b>
+
+Should read
+
+HashSet : <b>FAST</b> Access, assures no duplicates and provides ordering
+END QUESTION
+QUESTION 
+Is this statement true?
+
+A method local inner class must be marked final
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct, the statement is false</b>
+
+A method local inner class does not have to be marked final, but it can be.
+END QUESTION
+QUESTION 
+Is this statement true?
+
+A static nested class variables and methods must also be static
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct, the statement is false</b>
+
+A static nested class can declare and define non static members
+END QUESTION
+QUESTION 
+Is this statement true?
+
+A static nested class does not have access to non-static members of the enclosing class
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Option 1 is correct, the statement is true</b>
+
+A static nested class is not tied to the instance of the enclosing class and cant access the non static members of the enclosing class.
+END QUESTION
+QUESTION 
+Is this statement true?
+
+You must have a reference to an instance of an enclosing class in order to instantiate it?
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Option 2 is correct, the statement is not true</b>
+
+Static nested classes do not need a reference to an instance of the enclosing class.
+END QUESTION
+QUESTION 
+What will happen when you compile and run this code?
+
+public static void main(String[] args)
+{		
+	TreeSet set = new TreeSet();
+
+	set.add("Hello");
+	set.add(9);
+}			
+OPTIONS
+3
+1) Compiler error 
+2) Runtime error
+3) Runs OK
+ANSWER 2
+<b>Option 2 is correct, Runtime error</b>
+
+You can't put different types into the same TreeSet. At runtime the set will try to sort the elements as they are added and throw
+
+Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+END QUESTION
+QUESTION 
+Which of the following statements are true?
+OPTIONS
+4
+1) You cannot be certain at what point Garbage collection will occur
+2) Once an object is unreachable it will be garbage collected
+3) Both references and primitives are subject to garbage collection.
+4) Garbage collection ensures programs will never run out of memory
+ANSWER 1
+<b>Option 1 is correct, You cannot be certain at what point Garbage collection will occur</b>
+
+Once an object is unreachable it will be subject to garbage collection but you cannot be certain it ever will actually be garbage collected. The garbage collection mechanism only applies to objects not primitives. You should be able to guess that garbage collection cannot ensure programs do not run ever run out of memory, but it does ensure that memory no longer required is reallocated to be available.
+END QUESTION
+QUESTION 
+What code can you write to ensure that the Integer objects are garbage collected at a particular point in this code?
+
+public class DLSoftwareSolutions{
+   Integer  a= new Integer(1);
+   Integer  b=new Integer(2);
+   Integer c=new Integer(3);
+   
+   public static void main(String argv[])
+   {
+        DLSoftwareSolutions d = new DLSoftwareSolutions();
+        d.amethod();
+   }
+        	
+    public void amethod(){
+    	System.out.println(a);
+    	System.out.println(b);
+    	System.out.println(c);}}
+OPTIONS
+4
+1) System.gc();
+2) System.free();
+3) Set the value of each Integer to null
+4) None of the above
+ANSWER 4
+<b>Option 4 is correct, None of the above;</b>
+You can only suggest garbage collection, therefore you cannot be certain that it will run at any particular point in your code. Note that only instances of classes are subject to garbage collection not primitives.
+
+END QUESTION
+QUESTION 
+Which of the following is the correct syntax for suggesting that the JVM performs garbage collection?
+OPTIONS
+4
+1) System.free();
+2) System.setGarbageCollection();
+3) System.out.gc();
+4) System.gc();
+ANSWER 4
+<b>Option 4 is correct, System.gc();</b>
+END QUESTION
+QUESTION 
+class Test
+{
+	static void go(Object x)
+	{
+		System.out.println(
+			"PTFC - One Team in Glasgow!");
+	}
+	
+	public static void main(String[] args)
+	{		
+		byte x = 6;	
+		go(x);
+	}
+}
+What gets output?
+OPTIONS
+2
+1. "PTFC - One Team in Glasgow!"
+2. Compiler error - cant box then widen
+ANSWER 1
+<b>Option 1, "PTFC - One Team in Glasgow!" gets printed!</b>
+
+You can box THEN widen
+
+1. byte x was boxed to a Byte
+2. The Byte was widened to an Object (Byte extends Object)
+3. The go() method gets called.
+
+<b><u>Exam Tip</u></b>
+
+You cannot widen from one wrapper type to another
+You cannot widen then box
+You can box then widen
+You can combine var-args with widening or boxing
+The compiler will choose widening over boxing.
+Widening beats boxing
+Widening beats var-args
+Boxing beats var-args
+
+END QUESTION
+QUESTION 
+class Test{
+	static void go(Long x)
+	{
+	  System.out.println("Long");
+	}
+	static void go(Integer x)
+	{
+	  System.out.println("Integer");
+	}
+	static void go(Short x)
+	{
+	  System.out.println("Short");
+	}	
+	public static void main(String[] args)
+	{		
+		byte x = 6;	
+		go(x);
+	}		
+}
+What gets output?
+OPTIONS
+4
+1. Long
+2. Integer
+3. Short
+4. Compiler error
+ANSWER 4
+<b>Option 4, Compiler error</b>
+
+You cannot widen then box
+
+<b><u>Exam Tip</u></b>
+
+You cannot widen from one wrapper type to another
+You cannot widen then box
+You can box then widen
+You can combine var-args with widening or boxing
+The compiler will choose widening over boxing.
+Widening beats boxing
+Widening beats var-args
+Boxing beats var-args
+
+
+END QUESTION
+QUESTION 
+class Test{
+	static void go(int... x)
+	{
+		System.out.println("var args");
+	}
+	static void go(Integer x)
+	{
+		System.out.println("Int");
+	}	
+	public static void main(String[] args)
+	{		
+		int x = 6;	
+		go(x);
+	}		
+}
+What gets output?	
+OPTIONS
+2
+1. Int
+2. var args
+ANSWER 1
+<b>Option 1, Int</b>
+Boxing beats var-args
+
+<b><u>Exam Tip</u></b>
+
+You cannot widen from one wrapper type to another
+You cannot widen then box
+You can box then widen
+You can combine var-args with widening or boxing
+The compiler will choose widening over boxing.
+Widening beats boxing
+Widening beats var-args
+Boxing beats var-args
+
+
+END QUESTION
+QUESTION 
+class Test{
+	static void go(int... x)
+	{
+		System.out.println("Int");
+	}	
+	static void go(Long x)
+	{
+		System.out.println("long");
+	}
+		
+	public static void main(String[] args)
+	{		
+		int x = 6;	
+		go(x);
+	}		
+}
+What gets output?
+OPTIONS
+2
+1. Int
+2. long
+ANSWER 1
+<b>Option 1, Int</b>
+You cannot widen from one wrapper type to another, so the Long method will not get called.
+
+<b><u>Exam Tip</u></b>
+
+You cannot widen from one wrapper type to another
+You cannot widen then box
+You can box then widen
+You can combine var-args with widening or boxing
+The compiler will choose widening over boxing.
+Widening beats boxing
+Widening beats var-args
+Boxing beats var-args
+
+END QUESTION
+QUESTION 
+class Test{
+	static void go(Integer x)
+	{
+		System.out.println("Int");
+	}
+	static void go(Long x)
+	{
+		System.out.println("long");
+	}
+	
+	public static void main(String[] args)
+	{		
+		int x = 6;	
+		go(x);
+	}		
+}
+What gets output?
+OPTIONS
+2
+1. Int
+2. long
+ANSWER 1
+<b>Option 1, Int</b>
+The compiler will box to an Integer.
+
+<b><u>Exam Tip</u></b>
+
+You cannot widen from one wrapper type to another
+You cannot widen then box
+You can box then widen
+You can combine var-args with widening or boxing
+The compiler will choose widening over boxing.
+Widening beats boxing
+Widening beats var-args
+Boxing beats var-args
+
+END QUESTION
+QUESTION 
+class Test{
+	static void go(Integer x)
+	{
+		System.out.println("Int");
+	}
+	static void go(long x)
+	{
+		System.out.println("long");
+	}
+	
+	public static void main(String[] args)
+	{		
+		int x = 6;	
+		go(x);
+	}		
+}
+What gets output?	
+OPTIONS
+2
+1. Int
+2. long
+ANSWER 2
+<b>Option 2, long</b>
+The compiler will choose widening over boxing.
+
+<b><u>Exam Tip</u></b>
+
+You cannot widen from one wrapper type to another
+You cannot widen then box
+You can box then widen
+You can combine var-args with widening or boxing
+The compiler will choose widening over boxing.
+Widening beats boxing
+Widening beats var-args
+Boxing beats var-args
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class DLSoftwareSolutions
+{
+	int x = 5;
+	
+	public static void main(String[] args)
+	{		
+		x++;						
+	}		
+}	
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, No</b>
+Wont compile as x is an instance variable and we are in static code.
+
+<b><u>Exam Tip</u></b>
+
+Watch out for code scoping errors, you may see them in switches, while, for and do loops.
+
+END QUESTION
+QUESTION 
+Given the following code
+
+		byte a = 8;
+		byte b = -1;		
+		byte c = 999;
+		
+		System.out.println(c);
+	
+What gets output?	
+OPTIONS
+3
+1. Compiler error
+2. 999
+3. Runtime error
+ANSWER 1
+<b>Option 1, Compiler error on line byte c = 999;</b>
+Type mismatch: cannot convert from int to byte
+
+The following IS legal
+
+byte c = 23;
+
+Only because the compiler auto narrows the value 23 to a byte. In other words the compiler does this
+
+byte c = (byte)23;
+
+END QUESTION
+QUESTION 
+Given the following code
+
+		byte a = 8;
+		byte b = 6;		
+		byte c = b + c;
+		
+		System.out.println(c);	
+		
+What gets output?	
+OPTIONS
+3
+1. Compiler error
+2. 14
+3. Runtime error
+ANSWER 1
+<b>Option 1, Compiler error</b>
+We tried to assign the sum of two bytes top a byte variable, the result of which was small enough to fit into a byte an int is returned.
+
+The following works
+
+	byte c = (byte)b+c; 
+END QUESTION
+QUESTION 
+class A { void go1(){}}
+class B extends A { void go2(){}}
+class Test{
+	public static void main(String[] args)
+	{
+		A a1 = new A();
+		A a2 = new B();
+		B b1 = new B();		
+		// INSERT HERE				
+	}
+What inserted at // INSERT HERE will compile?	
+OPTIONS
+4
+1. a2.go2();	
+2. (B)a2.go2();
+3. ((B)a2).go1();
+4. None.
+ANSWER 3
+<b>Option 3, ((B)a2).go1(); Compiles </b> 
+END QUESTION
+QUESTION 
+abstract interface DLSoftwareSolutions
+{
+	int someMethod(String s);
+};
+
+abstract class A implements DLSoftwareSolutions{}
+
+private abstract class B implements DLSoftwareSolutions{}
+
+class C implements DLSoftwareSolutions
+{
+	int someMethod(String s)
+	{
+		return 1;
+	};
+}
+
+Which class compiles?
+OPTIONS
+3
+1. A
+2. B
+3. C
+ANSWER 1
+<b>Option 1, A Compiles </b> 
+
+B does not compile because only public, abstract & final are permitted.
+C does not compile because someMethod is default and we cannot reduce the visibility of the inherited method from  DLSoftwareSolutions
+
+<b><u>Exam Tip</u></b>
+
+A single class can implement many interfaces
+You implement an interface by overriding all of the methods defined by the interface
+END QUESTION
+
+QUESTION 
+interface DLSoftwareSolutions
+{
+	int someMethod();
+};
+public class Test implements DLSoftwareSolutions{}
+
+Will this compile?	
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, no </b> 
+
+Test must implement the inherited abstract method DLSoftwareSolutions.someMethod()
+
+<b><u>Exam Tip</u></b>
+
+A single class can implement many interfaces
+You implement an interface by overriding all of the methods defined by the interface
+
+
+END QUESTION
+QUESTION 
+interface DLSoftwareSolutions{};
+public class Test extends DLSoftwareSolutions{}
+
+Will this compile?
+	
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, no </b> 
+
+You must implement an interface.
+
+<b><u>Exam Tip</u></b>
+
+A single class can implement many interfaces
+You implement an interface by overriding all of the methods defined by the interface
+
+
+END QUESTION
+QUESTION 
+import java.io.Console;
+
+public class Test {
+    public static void main(String[] args) {
+        Console console = System.getConsole();
+    }
+}
+Will this compile?	
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, no </b> 
+
+the following
+
+	Console console = System.console(); 
+
+will compile
+
+<b><u>Exam Tip</u></b>
+
+The Console questions are about getting input from the user, usually from the terminal. Note:
+
+    System.console() will return null if there isn't an available terminal
+    The readLine() methods return a String
+    The readPassword() methods return a char[]
+    Several methods take printf/format style arguments that can be used to provided a formatted prompt
+
+
+END QUESTION
+QUESTION 
+import java.io.Console;
+
+public class Test {
+    public static void main(String[] args) {
+        Console console = new Console();
+    }
+}
+
+Will this compile?	
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, no </b> 
+
+The constructor Console() is not visible.
+
+<b><u>Exam Tip</u></b>
+
+The Console questions are about getting input from the user, usually from the terminal. Note:
+
+    System.console() will return null if there isn't an available terminal
+    The readLine() methods return a String
+    The readPassword() methods return a char[]
+    Several methods take printf/format style arguments that can be used to provided a formatted prompt
+
+
+END QUESTION
+QUESTION 
+Is this statement true?	
+
+There is at maximum one object of type Console available per JVM.
+
+OPTIONS
+2
+1. True
+2. False
+ANSWER 1
+<b>Option 1, true </b> 
+
+<b><u>Exam Tip</u></b>
+
+The Console questions are about getting input from the user, usually from the terminal. Note:
+
+    System.console() will return null if there isn't an available terminal
+    The readLine() methods return a String
+    The readPassword() methods return a char[]
+    Several methods take printf/format style arguments that can be used to provided a formatted prompt
+
+
+END QUESTION
+QUESTION 
+Which of the following is illegal?
+
+	int i = 55;
+	float f = 44.6;
+	double d = 34.0;	
+OPTIONS
+3
+1. int i = 55;
+2. float f = 44.6;
+3. double d = 34.0;
+ANSWER 2
+<b>Option 2, float f = 44.6;</b> 
+
+END QUESTION
+QUESTION 
+class Base
+{
+  public void amethod(int i) { }
+}
+
+public class Test extends Base
+{
+public static void main(String argv[]){}
+	
+//line 1	 
+//void amethod(int i) throws Exception {} 
+  
+//line 2
+//public void amethod(long i)throws Exception{}
+  
+//line 3
+//public void amethod(long i){} 
+  
+//line 4
+//public void amethod(int i) throws Exception{}
+}
+	
+What line commented back in would generate a compiler error?
+OPTIONS
+4
+1. line 1
+2. line 2
+3. line 3
+4. line 4
+ANSWER 1
+<b>Option 1, line 1 object</b> 
+
+Cannot reduce the visibility of the inherited method from Base.
+
+END QUESTION
+QUESTION 
+public void foo(Object p)
+{
+ Object a = new Object();
+ int x = 999;
+ String str = "DLSoftwareSolutions";
+}
+How many objects will be eligible for GC just after the method returns?
+OPTIONS
+3
+1. 0 objects
+2. 1 objects
+3. 2 objects
+ANSWER 2
+<b>Option 2, 1 object</b> 
+Objects passed to the method are never garbage collected in (or right after) that method. So p cannot be GCed. 
+x is not an object. 
+DLSoftwareSolutions is a string literal which goes to the string pool and is not GCed. 
+So, only a is eligible for GC.
+
+END QUESTION
+QUESTION 
+Is the following valid?
+
+	byte b = 366;
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, No</b> 
+
+REASON: 366 cannot fit into a byte so you must cast it.: byte b = (byte) 366;
+
+Both can't go together.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+	Native method cannot be abstract.
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1, Yes</b> 
+
+Abstract means you are not implementing this method.
+Native means you are implementing it in native code.
+
+Both can't go together.
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+	HashSet allows null values to be stored.
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1, Yes</b> 
+
+END QUESTION
+QUESTION 
+Are the following statements true?
+
+A class that directly accesses member fields of another class, exhibits LOW COUPLING.
+
+When changing an implementation of a class, does not effect classes that use it, exhibits HIGH COUPLING.
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>The correct answer is Option 2, No</b> 
+
+The following is true
+
+A class that directly accesses member fields of another class, exhibits HIGH COUPLING.
+
+When changing an implementation of a class, does not effect classes that use it, exhibits LOW COUPLING.
+
+END QUESTION
+QUESTION 
+Is the following statements true?
+
+A class that directly accesses member fields of another class, exhibits HIGH COUPLING.
+
+When changing an implementation of a class, does not effect classes that use it, exhibits LOW COUPLING.
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>The correct answer is Option 1, Yes</b> 
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+When a programmer does not define ANY constructor, the compiler inserts one automatically, the access modifier of which is same as that of the class. For example, the constructor for the below given class will be protected:
+
+protected class A { }
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1, Yes</b> 
+
+END QUESTION
+QUESTION 
+Is the following valid?
+
+class A {      
+  class B {
+    class C extends A { 
+    }
+  }
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1, Yes</b> 
+
+An Inner class can extend its enclosing class. 
+
+END QUESTION
+QUESTION 
+Is the following valid?
+
+class A {      
+  class B {
+    class A {
+    }
+  }
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, Not valid</b> 
+
+An inner class cannot have same name as the enclosing class or classes.
+
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and executed?
+
+public static void main(String[] args) {
+    SortedSet set = new TreeSet();
+    set.add("Hello!");
+    set.add(45);
+}
+OPTIONS
+3
+1. A ClassCastException is thrown at runtime.
+2. Compilation fails.
+3. None of the above.
+ANSWER 3
+<b>Option 3, None of the above.</b> 
+
+Old school way of creating a Set.
+
+This will most probably cause problems when you retrieve the data!
+
+1.5 gave us Generics.....so use them!
+
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and executed?
+
+public static void main(String[] args) {
+    SortedSet set = new TreeSet();
+    set.add("Hello");
+}
+OPTIONS
+3
+1. A ClassCastException is thrown at runtime.
+2. Compilation fails.
+3. None of the above.
+ANSWER 3
+<b>Option 3, None of the above.</b> 
+
+Old school way of creating a Set, we can even add the following line to add an Integer to the set
+
+set.add(45);
+
+This will most probably cause problems when you retrieve the data!
+
+1.5 gave us Generics.....so use them!
+
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and executed?
+
+public static void main(String[] args) 
+{
+    SortedSet<Integer> set = 
+    	new TreeSet<Integer>();
+    	
+    set.add("Hello!");
+}
+OPTIONS
+3
+1. A ClassCastException is thrown at runtime.
+2. Compilation fails.
+3. None of the above.
+ANSWER 2
+<b>Option 2, Compilation fails.</b> 
+
+Trying to add a String to an Integer Set.
+
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Test <T> 
+{
+	Test(T my) 
+	{
+	    boolean b = (my instanceof T);
+	}
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, no</b> 
+
+Cannot perform instanceof check against type parameter T. Use instead its erasure Object instead since further generic type information will be erased at runtime
+
+<b><u>Exam Tip</u></b>
+
+The generics type identifier can be used in class, method and variable declarations:
+
+class Foo&#60;t&#62; {}; // class
+T fooInstance; // instance variable
+Foo(T fooRef); constructor argument
+void foo(T fooRef){}; // method argument
+T foo(){}; // return type
+
+You can use more than one parameterised type in a declaration:
+
+	public class DLSoftwareSolutions&#60;T, E&#62; {}
+	
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Test
+{
+	<T> T getFirst(List<T> list) 
+	{
+	    return list.get(0);
+	}
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1, yes</b> 
+This is an example of a generic method.
+
+<b><u>Exam Tip</u></b>
+
+The generics type identifier can be used in class, method and variable declarations:
+class Foo&#60;t&#62; {}; // class
+T fooInstance; // instance variable
+Foo(T fooRef); constructor argument
+void foo(T fooRef){}; // method argument
+T foo(){}; // return type
+
+	
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class Parent {}
+
+class Child extends Parent {}
+
+class Test implements Comparable<Parent> 
+{
+    public int compareTo(Child object) 
+    {
+    	return 0;
+    } 
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2, no</b> 
+
+END QUESTION
+QUESTION 
+Will this code compile successfully?
+
+class Test extends ArrayList<? extends Number> {}
+OPTIONS
+2
+1. yes
+2. no
+ANSWER 2
+<b>Option 2, will not compile</b> 
+
+What can we say....its just gibberish...for the record here is the compilation error
+
+The type Test cannot extend or implement ArrayList<? extends Number>. A supertype may not specify any wildcard
+
+END QUESTION
+QUESTION 
+Will this code compile successfully?
+
+new ArrayList<Set<?>>();
+OPTIONS
+2
+1. yes
+2. no
+ANSWER 1
+<b>Option 1, will compile OK</b> 
+
+END QUESTION
+QUESTION 
+Will this code compile successfully?
+
+new TreeMap<String, ? super Integer>();
+OPTIONS
+2
+1. yes
+2. no
+ANSWER 2
+<b>Option 2, will not compile</b> 
+
+The wildcard has to be on the left hand side.
+
+END QUESTION
+QUESTION 
+Will this code compile successfully?
+
+new ArrayList<?>();
+OPTIONS
+2
+1. yes
+2. no
+ANSWER 2
+<b>Option 2, will not compile</b> 
+
+The wildcard has to be on the left hand side.
+
+END QUESTION
+QUESTION 
+Which line fails compilation?
+
+Class c = ArrayList<Integer>.class; //line 1
+Class c = new ArrayList<Integer>().getClass(); line 2
+OPTIONS
+3
+1. line 1
+2. line 2
+3. none
+ANSWER 1
+<b>Option 1, line 1 fails compilation</b> 
+
+Line 2 is the correct way to get the Class.
+END QUESTION
+QUESTION 
+Which line fails compilation?
+
+Object set = new TreeSet();
+// line 1
+boolean flag = set instanceof TreeSet;
+
+// line 2
+boolean flag2 = set instanceof NavigableSet; 
+
+// line 3
+boolean flag3 = set instanceof NavigableSet<?>; 
+
+OPTIONS
+4
+1. line 1
+2. line 2
+3. line 3
+4. None
+ANSWER 4
+<b>Option 4, none</b> 
+
+You may have been tempted to answer line 3, but NavigableSet IS-A TreeSet and the generic declaration gets type erased at compile time.
+
+<b><u>Exam Tip</u></b>
+
+Cannot perform instanceof check against parameterized type. 
+You can use a wildcard as line 3 shows, since further generic type information will be erased at runtime.
+END QUESTION
+QUESTION 
+Which line fails compilation
+
+// line 0
+Object set = new TreeSet<Integer>();
+
+// line 1
+boolean flag = set instanceof NavigableSet<Integer>; 
+
+// line 2
+boolean flag2 = set instanceof NavigableSet; 
+
+// line 3
+boolean flag3 = set instanceof NavigableSet<?>; 
+
+OPTIONS
+4
+1. line 1
+2. line 2
+3. line 3
+4. None
+ANSWER 1
+<b>Option 1, line 1 fails compilation</b>
+ 
+Cannot perform instanceof check against parameterized type. 
+You can use a wildcard as line 3 shows since further generic type information will be erased at runtime.
+END QUESTION
+
+QUESTION 
+What happens when this code is compiled and executed?
+
+Object set = new TreeSet<Integer>();
+boolean flag = set instanceof NavigableSet<?>;
+System.out.println(flag);
+OPTIONS
+3
+1. It prints 'true'.
+2. It prints 'false'.
+3. Compilation fails.
+ANSWER 1
+<b>Option 1, prints 'true'</b>
+ 
+NavigableSet IS-A TreeSet and the generic declaration gets type erased at compile time.
+END QUESTION
+QUESTION 
+What happens when this code is compiled and executed?
+
+class Parent {
+  void say(List<? extends Number> list) 
+  {
+    System.out.println("parent");
+  }
+}
+class Child extends Parent 
+{
+	void say(List<Integer> list) 
+	{
+		System.out.println("child");
+	}
+}
+class Test 
+{
+  public static void main(String[] java) 
+  {
+    Parent c = new Child();
+    c.say(new ArrayList<String>());
+  }
+}
+OPTIONS
+3
+1. It prints 'child'.
+2. It prints 'parent'.
+3. Compilation fails.
+ANSWER 3
+<b>Option 3, compilation fails</b> 
+Name clash: The method say of type Child has the same erasure as say of type Parent but does not override it
+END QUESTION
+QUESTION 
+Which one is valid?
+// CODE SNIPPET 1
+class Super 
+{
+	public void foo(Collection<?> c){} 
+}        
+class Sub extends Super 
+{
+	public void foo(Collection c){}
+}    
+// CODE SNIPPET 2
+class Super 
+{
+	public void foo(Collection c) {}
+}       
+class Sub extends Super 
+{
+    public void foo(Collection<?> c){}
+}       
+OPTIONS
+3
+1. CODE SNIPPET 1
+2. CODE SNIPPET 2
+3. Neither
+ANSWER 1
+<b>Option 1, CODE SNIPPET 1 is OK, CODE SNIPPET 2 will not compile</b> 
+
+Don't worry you got this one wrong, this is a difficult question, the following explanation may help. 
+
+The reason CODE SNIPPET 2 will not compile is;
+
+In order for foo(Collection&#60;?&#62;) of type Sub to override foo(Collection) of type Super, it must have the same signature as the signature of foo(Collection)(it doesn't), OR
+the same signature as the erasure of the signature of foo(Collection) (it doesn't...erasure of the superclass method doesn't even take place here)
+
+This is why a generic method cannot override a non-generic method. 
+
+END QUESTION
+
+QUESTION 
+What happens when this code is compiled and executed?
+
+class Parent {
+	void say(List<? extends Number> list) 
+	{
+		System.out.println("parent");
+	}
+}
+class Child extends Parent 
+{
+	void say(List<Integer> list) 
+	{
+		System.out.println("child");
+	}
+}
+class Test 
+{
+	public static void main(String[] java) 
+	{
+		Parent c = new Child();
+		c.say(new ArrayList<String>());
+	}
+}
+OPTIONS
+3
+1. It prints 'child'.
+2. It prints 'parent'.
+3. Compilation fails.
+ANSWER 3
+<b>Option 3, compilation fails</b> 
+Name clash: The method say in Child is the same as Parent, but because of erasure does not override it.
+END QUESTION
+
+QUESTION 
+What happens when this code is compiled and executed?
+
+class Parent 
+{
+  void say(List<String> list) 
+  {
+	System.out.println("parent String list");
+  }	
+  void say(List<Long> list) 
+  {
+	System.out.println("parent Long list");
+  }
+}
+class Child extends Parent 
+{
+  void say(List list) 
+  {
+	System.out.println("child");
+  }
+}
+class Test 
+{
+  public static void main(String[] java) 
+  {
+	Parent c = new Child();
+	c.say(new ArrayList<String>());
+  }
+}
+OPTIONS
+4
+1. It prints 'child'.
+2. It prints 'parent String list'.
+3. It prints 'parent Long list'.
+4. Compilation fails.
+ANSWER 4
+<b>Option 4, compilation fails</b> Type erasure would compile both Parent say methods to void say(List list)
+
+So we get the compiler error 'Method say(List<Long>) has the same erasure say(List<E>) as another method in type Parent'
+END QUESTION
+QUESTION 
+What happens when this code is compiled and executed?
+
+class Parent 
+{
+  void say(List<String> list) 
+  {
+	System.out.println("parent");
+  }
+}
+
+class Child extends Parent 
+{
+  void say(List list) 
+  {
+    System.out.println("child");
+  }
+}
+
+class Test 
+{
+  public static void main(String[] java) 
+  {
+	Parent c = new Child();
+	c.say(new ArrayList<List>());
+  }
+ }
+OPTIONS
+3
+1. It prints 'child'.
+2. It prints 'parent'.
+3. Compilation fails.
+ANSWER 3
+<b>Option 3 is correct, compilation fails</b>
+
+The method say(List<String>) in the type Parent is not applicable for the arguments (ArrayList<List>)
+END QUESTION
+QUESTION 
+What happens when this code is compiled and executed?
+
+class Parent {
+	void say(List<String> list) 
+	{
+		System.out.println("parent");
+	}
+}
+class Child extends Parent
+{
+	void say(List list) 
+	{
+		System.out.println("child");
+	}
+}
+
+class Test 
+{
+	public static void main(String[] java) 
+	{
+		Child c = new Child();
+		c.say(new ArrayList<String>());
+	}
+}
+
+OPTIONS
+3
+1. It prints 'child'.
+2. It prints 'parent'.
+3. Compilation fails.
+ANSWER 1
+<b>Option 1 is correct, child is printed</b>
+
+END QUESTION
+QUESTION 
+What happens when this code is compiled and executed?
+
+class Parent 
+{
+	void say(List<String> list) 
+	{
+		System.out.println("parent");
+	}
+}
+class Child extends Parent 
+{
+	void say(List list) 
+	{
+		System.out.println("child");
+	}
+}
+
+class Test 
+{
+	public static void main(String[] java) 
+	{
+		Child c = new Child();
+		c.say(new ArrayList<Long>());
+	}
+}
+OPTIONS
+3
+1. It prints 'child'.
+2. It prints 'parent'.
+3. Compilation fails.
+ANSWER 1
+<b>Option 1 is correct, child is printed</b>
+
+END QUESTION
+QUESTION 
+Will this code compile OK?
+
+class Animal{};
+class Dog extends Animal{};
+
+public class Test 
+{
+public static void main(String[] args) 
+{
+	new Test().go();
+}
+
+public void go()
+	test(new ArrayList<Animal>());	// line 1
+	test(new ArrayList<Dog>());     // line 2
+}
+
+public void test(List<? extends Animal> list)
+{}
+}
+OPTIONS
+3
+1. Yes
+2. No, compile time error line 1
+2. No, compile time error line 2
+ANSWER 1
+<b>Option 1 is correct, yes compiles OK</b>
+
+END QUESTION
+QUESTION 
+
+List<? super Integer> list = new ArrayList<Integer>();
+
+list.add(new Integer(4));
+list.add(new Integer(5));
+
+Object first = list.get(0);
+Integer second = list.get(1);
+System.out.println("HERE");
+
+What happens when this code is compiled and ran?
+OPTIONS
+3
+1. Compiler error
+2. Prints HERE
+3. Runtime error
+ANSWER 1
+<b>Option 1 is correct, Compiler error</b>
+
+	Integer second = list.get(1);
+	
+Should read
+
+	Integer second = (Integer) list.get(1);
+	
+Object first = list.get(0); is OK because Object is the top level Object, so can point to anything in the list.
+END QUESTION
+
+QUESTION 
+List<? super Integer> list = new ArrayList<Integer>();
+
+list.add(new Integer(4));
+list.add(new Integer(5));
+
+Object first = list.get(0);
+Integer second = list.get(1);
+System.out.println("HERE");
+		
+What happens when this code is compiled and ran?
+OPTIONS
+3
+1. Compiler error
+2. Prints HERE
+3. Runtime error
+ANSWER 1
+<b>Option 1 is correct, Compiler error</b>
+
+	Integer second = list.get(1);
+Should read
+	Integer second = (Integer) list.get(1);
+	
+Object first = list.get(0); is OK because Object is the top level Object, so can point to anything in the list.
+
+END QUESTION
+QUESTION 
+List<? super Integer> list = new ArrayList<Integer>();
+Integer first = list.get(0);
+
+Will this code compile?
+OPTIONS
+3
+1. Yes, without warnings.
+2. Yes, with a warning.
+3. No.
+ANSWER 3
+<b>Option 3 is correct, no</b>
+
+END QUESTION
+QUESTION 
+Will this code compile?
+
+	Queue<?> queue1 = null;
+	Queue queue2 = null;
+	queue1 = queue2;
+
+OPTIONS
+3
+1. Yes, without warnings.
+2. Yes, with a warning.
+3. No.
+ANSWER 2
+<b>Option 2 is correct, Yes, with a warning.</b>
+
+Queue is a raw type. References to generic type Queue<E> should be parameterized
+
+END QUESTION
+QUESTION 
+	Queue queue1 = null;
+	Queue<Integer> queue2 = null;
+	queue1 = queue2;
+
+Will this code compile?
+OPTIONS
+3
+1. Yes, without warnings.
+2. Yes, with a warning.
+3. No.
+ANSWER 2
+<b>Yes, with a warning.</b>
+
+Queue is a raw type. References to generic type Queue<E> should be parameterized
+
+END QUESTION
+QUESTION 
+Queue<?> q1 = null;
+Queue<Integer> q2 = null;
+q1 = q2;
+
+Will this code compile?
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Option 1 is correct, Yes this code will compile</b>
+
+If you see the wildcard notation (?), this means "many possibilites", so (?) can easily point to Integer.
+
+<b><u>Exam Tip</u></b>
+
+'? Extends Object' and '?' are absolutely identical! They both say I can refer to any type of object.
+
+END QUESTION
+QUESTION 
+SortedSet<? super Number> set1 = null;
+SortedSet<Integer> set2 = null;
+set1 = set2;
+
+Will this code compile?
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Option 2 is correct, No this code will not compile</b>
+
+Type mismatch: cannot convert from SortedSet&#60;Integer&#62; to SortedSet&#60;? super Number&#62;
+
+END QUESTION
+QUESTION 
+	List<Number> list1 = null;
+	List<? super Integer> list2 = null;
+	list2 = list1;
+
+Will this code compile?
+OPTIONS
+1
+1. Yes
+2. No
+ANSWER 1
+<b>This code will compile</b>
+
+END QUESTION
+QUESTION 
+List<Number> list1 = null;
+List<? super Integer> list2 = null;
+list1 = list2;
+
+Will this code compile?
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>No this code will not compile</b>
+END QUESTION
+QUESTION 
+List<? extends Number> list1 = null;
+List<Integer> list2 = null;
+list1 = list2;
+
+Will this code compile?
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Yes, this code will compile</b>
+
+Integer extends Number
+END QUESTION
+QUESTION 
+List<Number> list1 = null;
+List<Integer> list2 = null;
+list1 = list2;
+
+Will this code compile?
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>No, type mismatch: cannot convert from Integer to Number</b>
+
+Polymorphism applies to the base type only i.e.
+
+List&#60;Integer&#62; fred = new ArrayList&#60;Integer&#62;();
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and executed?
+
+public class Test {
+    public static void main(String[] args) {
+        Thread thread = new Thread();
+        thread.run();
+        thread.run();
+    }
+}
+OPTIONS
+3
+1. Compilation fails.
+2. It compiles and runs fine.
+3. An IllegalThreadStateException is thrown at runtime.
+ANSWER 2
+<b>Correct answer is 2. It compiles and runs fine.</b>
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and executed?
+
+public class Run {
+    public static void main(String[] args) {
+        new Thread().run();
+    }
+}
+OPTIONS
+3
+1. Compilation fails.
+2. It compiles and runs fine.
+3. An IllegalThreadStateException is thrown at runtime.
+ANSWER 2
+<b>Correct answer is 2. It compiles and runs fine.</b>
+END QUESTION
+QUESTION 
+Will this code compile successfully? 
+
+class DLSoftwareSolutions extends Runnable {}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Correct answer is 2. Does not compile</b>
+
+Runnable is an Interface, so you cannot extend it, only implement it.
+
+END QUESTION
+QUESTION 
+Will this code compile successfully?
+
+class DLSoftwareSolutions extends Thread {}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Correct answer is 1 Compiles OK</b>
+
+END QUESTION
+QUESTION 
+Will this code compile successfully?
+
+class Test implements Runnable {
+    public void run() {
+    }
+    void run(Runnable r) {
+    }
+    void run(String... s) {
+    }
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Correct answer is 1 Compiles OK</b>
+
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and run
+
+public class B implements Runnable 
+{
+    private void run() 
+    {
+      System.out.println("Hello");
+    }       
+    public void start() 
+    {
+      System.out.println("Start"); 
+    }   
+    public static void main(String[] args)
+    {
+      new Thread(new B()).start();
+    }
+}
+OPTIONS
+4
+1. Compilation error
+2. Nothing gets output
+3. Hello
+4. Start
+ANSWER 1
+<b>Correct answer is 1 Compilation error</b>
+Cannot reduce the visibility of the inherited run method from Runnable
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and run
+
+public class B implements Runnable 
+{
+    private int run() 
+    {
+    	System.out.println("Hello");    	
+    	return 1;
+    }
+        
+    public void start() 
+    {
+    	System.out.println("Start");
+    }
+    
+    public static void main(String[] args)
+    {
+    	new Thread(new B()).start();   	
+    }
+}
+OPTIONS
+4
+1. Compilation error
+2. Runtime error
+3. Hello
+4. Start
+ANSWER 1
+<b>Correct answer is 1 Compilation error</b>
+The return type of int in the run method is incompatible with Runnable.run()
+END QUESTION
+QUESTION 
+What happens when this code gets compiled and run
+
+public class B implements Runnable {
+    public final void run() 
+    {
+    	System.out.println("Run");
+    }
+    
+    public void start() 
+    {
+    	System.out.println("Start");
+    }
+    
+    public static void main(String[] args)
+    {
+    	new Thread(new B()).start();   	
+    }
+}
+OPTIONS
+4
+1. Compilation error
+2. Runtime error
+3. Run
+4. Start
+ANSWER 3
+<b>Correct answer is 3 Run gets printed</b>
+
+It is OK to declare the run method final
+
+END QUESTION
+QUESTION 
+Will this code compile successfully? 
+
+public class B implements Runnable 
+{
+    void run() 
+    {
+    }
+}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Correct answer is No</b>
+
+Cannot reduce the visibility of the inherited method from Runnable</b>
+
+END QUESTION
+QUESTION 
+Will this code compile successfully? 
+
+class Test extends Runnable {}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>Correct answer is No</b>
+
+Runnable is an Interface which must be implemented</b>
+
+END QUESTION
+QUESTION 
+Class Thread implements the Runnable interface.
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>Correct answer is 1</b>
+
+The Thread class does implement the Runnable interface.</b>
+
+END QUESTION
+QUESTION 
+Runnable defines a method run. Whats the signature?
+OPTIONS
+4
+1. public void run()
+2. public void run() throws Exception
+3. public void run(Runnable r)
+4. public void run(Runnable r) throws Exception
+ANSWER 1
+<b>Correct answer is 1) public void run()</b>
+
+Implementing Runnable is the simplest way to create a new thread. 
+
+This interface defines only run() method. To implement Runnable, a class need only implement run(), which is declared as public and void in Runnable. After the class that implements Runnable is created, it can be passed in the constructor of Thread to instantiate an object of Thread. 
+
+END QUESTION
+QUESTION 
+public class DLSoftwareSolutions 
+{
+	public static void main(String[] args) 
+		throws Exception 
+	{
+		Calendar c = new Calendar();
+		System.out.println(c.getTimeInMillis());
+	}
+}
+What is the output for the above code ?
+OPTIONS
+4
+1. Returns this Calendar's time value in milliseconds.
+2. Compile error : Cannot instantiate the type Calendar
+3. Runtime Exception
+4. None of the above
+ANSWER 2
+<b>Correct answer is 2) Compile error : Cannot instantiate the type Calendar</b>
+
+In order to create a Calendar instance, you have to use getInstance()
+
+	Calendar cal = Calendar.getInstance();
+
+END QUESTION
+QUESTION 
+Is this a valid statement?
+
+OutputStream out = 
+	new FileOutputStream(new File("test.txt"));
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 1
+<b>Correct answer is 1, yes this is valid</b>
+
+END QUESTION
+QUESTION 
+Is this a valid statement?
+
+OutputStream out = 
+	new OutputStream(new File("test.txt")); 
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Correct answer is option 2 No</b>
+
+OutputStream is abstract, you cannot instantiate OutputStream.
+
+However, you could do the following
+
+	OutputStream out = new FileOutputStream(new File("test.txt"));
+
+END QUESTION
+QUESTION 
+What happens when this code is compiled and executed?
+
+void test() throws IOException {
+    PrintWriter writer = 
+       new PrintWriter(new PrintWriter(
+          new PrintWriter(
+             new PrintWriter(
+             	new PrintWriter(
+             		"fred.txt")))));
+    writer.print("fred");
+    writer.flush();
+    writer.close();
+}
+OPTIONS
+4
+1) Compilation fails because a PrintWriter cannot accept multiple PrintWriters in its constructor. 
+2) Compilation fails because there is no method print(). 
+3) Two files fred.txt with the same content are created.
+4) A file fred.txt with the content 'fred' is created. 
+ANSWER 4
+<b>Correct answer is option 4</b>
+
+The constructor PrintWriter(Writer out) is getting called. PrintWriter IS-A Writer, so this is OK if a little strange!. 
+END QUESTION
+QUESTION 
+What happens when this code is compiled and executed?
+
+void test() throws IOException {
+PrintWriter writer = new PrintWriter(new PrintWriter(new PrintWriter("fred.txt")));
+writer.print("fred");
+writer.flush();
+writer.close();
+}
+OPTIONS
+4
+1) Compilation fails because a PrintWriter cannot accept a PrintWriter in its constructor. 
+2) Compilation fails because there is no method print(). 
+3) Two files fred.txt with the same content are created.
+4) A file fred.txt with the content 'fred' is created. 
+ANSWER 4
+<b>Correct answer is option 4  </b>
+
+The constructor PrintWriter(Writer out) is getting called. PrintWriter IS-A Writer, so this is OK. 
+END QUESTION
+QUESTION 
+Which one does not extend java.lang.Number 
+OPTIONS
+4
+1) Integer 
+2) Boolean 
+3) Short
+4) Long 
+ANSWER 2
+<b>Correct answer is 2) Boolean  </b>
+END QUESTION
+QUESTION 
+Given the following main method in a class called Foo and a command line of
+
+java Foo one two cycle
+
+what will be output?
+
+public static void main(String args[])
+{
+	System.out.println(args[0]);
+}
+OPTIONS
+4
+1) None of these options
+2) cycle
+3) one
+4) two
+ANSWER 3
+<b>Correct answer is 3) one</b>
+
+Command line parameters start from 0.
+END QUESTION
+QUESTION 
+Which of the following will compile correctly
+OPTIONS
+4
+1) short dlShort = 23S;
+2) String name = 'DL Software Solutions';
+3) char c = 34c;
+4) int z = 077;
+ANSWER 4
+<b>Correct answer is 4) int z = 077;</b>
+
+The letters c and S do not exist as literal indicators and a String must be enclosed with double quotes, not single as in this case.
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Outer
+{
+	public String name = "Outer";
+		
+    final abstract private class Inner
+    {
+      String name =new String("Inner");
+      void showName()
+      {
+        System.out.println(name); 
+      }
+    }//End of Inner class  
+    
+    public static void main(String argv[]){}    
+} //End of Outer class
+OPTIONS
+2
+1) Yes
+2) No
+ANSWER 2
+<b>Answer is 2) No</b>
+
+Nested classes or any class for that matter cannot be both abstract and final.
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Outer{
+	public String name = "Outer";
+	public static void main(String argv[])
+	{
+    }//End of main
+    
+    final private class Inner
+    {
+      String name =new String("Inner");
+      void showName()
+      {
+        System.out.println(name);
+      }
+    }//End of Inner class      
+} //End of Outer class
+OPTIONS
+2
+1) Yes
+2) No, nested classes cannot be final.
+ANSWER 1
+<b>Answer is 1) Yes</b>
+
+A nested class can be declared abstract or final, but not both.
+
+<b><u>Exam Tip</u></b>
+
+If you have a static nested class, you cant access the methods and variables of the outer class from the static nested (inner) class.
+You cant create a static member inside the nested class.
+To have instance of nested class you must have a instance of outer class.
+Nested class can be declared abstract or final. 
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+public class Outer{
+	public String name = "Outer";
+	public static void main(String argv[])
+	{
+    }//End of main
+    
+    abstract private class Inner
+    {
+      String name =new String("Inner");
+      void showName()
+      {
+        System.out.println(name); 
+      }
+    }//End of Inner class      
+} //End of Outer class
+OPTIONS
+2
+1) Yes
+2) No, nested classes cannot be abstract.
+ANSWER 1
+<b>Answer is 1) Yes</b>
+
+A nested class can be declared abstract or final.
+
+<b><u>Exam Tip</u></b>
+
+If you have a static nested class, you cant access the methods and variables of the outer class from the static nested (inner) class.
+You cant create a static member inside the nested class.
+To have instance of nested class you must have a instance of outer class.
+Nested class can be declared abstract or final. 
+END QUESTION
+QUESTION 
+What will happen when you attempt to compile and run this program
+
+public class Outer{
+  public String name = "Outer";
+  public static void main(String argv[])
+  {
+    Inner i = new Outer().new Inner(); // line 1
+    i.showName();
+  }//End of main
+  
+  private class Inner{ // line 2
+    static String name =new String("Inner"); // line 3
+    void showName()
+    {
+      System.out.println(name); 
+    }
+  }//End of Inner class      
+} //End of Outer class
+OPTIONS
+4
+1) Compile and run with output of "Outer"
+2) Compile time error line 1
+3) Compile time error line 2
+4) Compile time error line 3
+ANSWER 4
+<b>Answer is 4) Compile time error line 3</b>
+
+ Compile time error because you can't create a static member inside the nested class.
+
+<b><u>Exam Tip</u></b>
+
+If you have a static nested class, you cant access the methods and variables of the outer class from the static nested (inner) class.
+You cant create a static member inside the nested class.
+To have instance of nested class you must have a instance of outer class.
+Nested class can be declared abstract or final. 
+END QUESTION
+QUESTION 
+What will happen when you attempt to compile and run this program?
+
+public class Outer{
+  public String name = "Outer";
+  public static void main(String argv[])
+  {
+    Inner i = new Inner();
+    i.showName();
+  }//End of main
+
+  private class Inner{
+    String name =new String("Inner");
+    void showName()
+    {
+      System.out.println(name);
+    }
+  }//End of Inner class
+} //End of Outer class
+OPTIONS
+4
+1) Compile and run with output of "Outer"
+2) Compile and run with output of "Inner"
+3) Compile time error because Inner is declared as private
+4) Compile time error because of the line creating the instance of Inner
+ANSWER 4
+<b>Answer is 4) Compile time error because of the line creating the instance of Inner</b>
+
+<i>This looks like a question about inner classes but it is also a reference to the fact that the main method is static. You cannot directly access a non static method. The line causing the error could be fixed by changing it to say
+
+        Inner i = new Outer().new Inner();
+        
+Then the code would compile and run producing the output "Inner"</i>
+
+<b><u>Exam Tip</u></b>
+
+If you have a static nested class, you cant access the methods and variables of the outer class from the static nested (inner) class.
+You cant create a static member inside the nested class.
+To have instance of nested class you must have a instance of outer class.
+Nested class can be declared abstract or final. 
+END QUESTION
+QUESTION 
+What will happen when you attempt to compile and run this code?
+
+private class Base{}
+public class DLSoftwareSolutions{
+	transient int  anInt;
+	public static void main(String fred[]){}
+}
+OPTIONS
+4
+1) Compile time error: Base cannot be private
+2) Compile time error indicating that an integer cannot be transient
+3) Compile time error transient not a data type
+4) Compile time error malformed main method
+ANSWER 1
+<b>Answer is 1) Compile time error: Base cannot be private</b>
+
+<i>No top level class in java can be declared as private only public, abstract and final are permitted.</i>
+
+<b><u>Exam Tip</u></b>
+
+We can't declare top level class as private(only public).
+We can declare inner classes as private.
+
+
+END QUESTION
+QUESTION 
+What will happen when you attempt to compile and run this code?
+
+class Base
+{
+    public final void amethod()
+    {
+       System.out.println("amethod");
+    }
+}
+public class Fin extends Base{
+     public static void main(String argv[])
+     {
+        Base b = new Base();
+        b.amethod();
+     }
+}
+OPTIONS
+4
+1) Compile time error indicating that a class with any final methods must be declared final
+2) Compile time error indicating that you cannot inherit from a class with final methods
+3) Run time error indicating that Base is not defined as final
+4) Success in compilation and output of "amethod" at run time.
+ANSWER 4
+<b>Answer is 4)</b> 
+
+Success in compilation and output of "amethod" at run time.
+
+END QUESTION
+QUESTION 
+public class DlSoftwareSolutions 
+{
+
+public static void main(String argv[]){} 
+
+/*Modifier */ class MyInner {}
+}
+
+What modifiers would be illegal at Modifier comment in the above code? 
+OPTIONS
+4
+1) public 
+2) private 
+3) static 
+4) friend 
+ANSWER 4
+<b>Answer is 4) friend (Exam Objective 3.7)</b> 
+
+public, private, static are all legal access modifiers for this inner class. 
+
+END QUESTION
+QUESTION 
+What is the result of the following operation? 
+System.out.println(4 | 3); 
+OPTIONS
+4
+1) 6 
+2) 0 
+3) 1 
+4) 7 
+ANSWER 4
+<b>Answer is 4) 7</b> 
+
+The | is known as the OR operator, you could think of it as the either/or operator. Turning the numbers into binary gives 
+<i>
+4=100 
+3=011 
+</i>
+For each position, if either number contains a 1 the result will contain a result in that position. As every position contains a 1 the result will be
+<i> 
+111 
+Which is decimal 7. 
+</i>
+END QUESTION
+QUESTION 
+What will happen if you attempt to compile and run the following code? 
+
+Integer five=new Integer(5); 
+Long six=new Long (6);
+System.out.println(five + six); 
+int i=1;
+System.out.println(i + six);
+OPTIONS
+4
+1) 5 followed by 6 followed by 1 followed by 6
+2) 11 followed by 7 
+3) compiler error
+4) runtime error
+ANSWER 2
+<b>Answer is 2) 11 followed by 7</b> 
+
+END QUESTION
+QUESTION 
+Which of the following methods can be legally inserted in place of the comment //Code Here? 
+
+class Base
+{ 
+   public void amethod(int i){}
+}
+ 
+public class Super extends Base
+{
+   public static void main(String argv[]){} 
+   
+   //Code Here
+}
+OPTIONS
+3
+1) void amethod(int i) throws Exception {} 
+2) void amethod(long i)throws Exception {} 
+3) public void amethod(int i) throws Exception {} 
+ANSWER 2
+<b>Answer is 2) void amethod(long i)throws Exception {}</b>  
+
+Options 1 & 3 will not compile as they attempt to throw Exceptions not declared in the base class. 
+
+Because option 2 takes a parameter of type long it represents overloading not overriding and there is no such limitations on overloaded methods.
+ 
+<b><u>Exam Tip</u></b>
+
+Overloading means reusing a method name, but with different arguments
+Methods from a superclass can be overloaded in a subclass
+Polymorphism applies to OVERRIDING not overloading
+
+
+END QUESTION
+QUESTION 
+What will happen if you attempt to compile and run the following code? 
+
+class Base {} 
+class Sub extends Base {} 
+class Sub2 extends Base {}
+public class DLSoftwareSolutions{
+    public static void main(String argv[])
+    {
+        Base b=new Base();
+        Sub s=(Sub) b;
+    }
+}
+OPTIONS
+3
+1) Compile and run without error 
+2) Compile time Exception 
+3) Runtime Exception 
+ANSWER 3
+<b>Answer is 3) Runtime Exception</b>  
+
+Without the cast to sub you would get a compile time error. 
+The cast tells the compiler that you really mean to do this and the actual type of b does not get resolved until runtime. 
+
+Casting down the object hierarchy as the compiler cannot be sure what has been implemented in descendent classes.
+Casting up is not a problem because sub classes will have the features of the base classes. 
+ 
+This can feel counter intuitive if you are aware that with primitives casting is allowed for widening operations (ie byte to int). 
+
+
+END QUESTION
+QUESTION 
+Which of the following statements are true? 
+OPTIONS
+3
+1) Methods cannot be overriden to be more private
+2) Static methods cannot be overloaded
+3) Private methods cannot be overloaded
+ANSWER 1
+<b>Answer is 1) Methods cannot be overriden to be more private</b>
+
+Static methods cannot be overriden but they can be overloaded. 
+There is no logic or reason why private methods should not be overloaded. 
+
+END QUESTION
+QUESTION 
+Which of the following lines of code will compile without error 
+
+1) 
+int i=0; 
+if(i) {System.out.println("DL Software Solutions"); }
+
+2) 
+boolean a=true; 
+boolean a2=true; 
+if(a==a2) {System.out.println("Hello");}
+
+3) 
+int a=1; 
+int b=2; 
+if(a==1|| b==2) 
+ System.out.println("Hi there");
+OPTIONS
+4
+1) 1 and 2 
+2) 2 and 3
+3) 3 and 1
+4) None.
+ANSWER 2
+<b>Option 2 (code 2 and 3) will compile without error. (Exam Objective 4.2)</b> 
+Option 1 will not compile because if must always test a boolean. 
+This can catch out C/C++ programmers who expect the test to be for either 0 or not 0. 
+
+END QUESTION
+QUESTION 
+What will be printed out if you attempt to compile and run the following code? 
+
+int a = 1;
+final int b = 0;
+int x = 0;
+
+switch(x) {
+	case a:System.out.println("A");
+	case b:System.out.println("B");
+} 
+OPTIONS
+4
+1) compiler error 
+2) A, B
+3) A
+4) B 
+ANSWER 1
+<b>The answer is 1) Compiler error - case expressions must be constant expressions.</b>
+
+	case a: // invalid
+	
+The following is allowed.
+
+    final int b = 0; \\ compile-time constant expression = allowed  
+    
+In java the ONLY accepted of the above three is the 'compile-time constant expression' in a case statement. 
+
+END QUESTION
+QUESTION 
+What will be printed out if you attempt to compile and run the following code? 
+
+final int a = 1;
+final int b;
+b = 0;
+int x = 0;
+
+switch(x) {
+
+	case a:
+		System.out.println("A");
+	case b: 
+		System.out.println("B");
+} 
+OPTIONS
+4
+1) compiler error 
+2) A, B
+3) A
+4) B 
+ANSWER 1
+<b>The answer is 1) Compiler error - case expressions must be constant expressions.</b>
+
+    final int a = 1; \\ compile-time constant expression = allowed  
+    final int b;       \\ final variable declaration              = NOT allowed  
+    b = 0;             \\ and variable initialisation             = NOT allowed  
+    
+In java the ONLY accepted of the above three is the 'compile-time constant expression' in a case statement. It is a requirement. There maybe a specific underlying reason, but the MOST important thing here (and for the purpose of the exams) is that it is a requirement
+
+END QUESTION
+QUESTION 
+
+What will be printed out if you attempt to compile and run the following code? 
+
+int i=1; 
+switch (i) 
+{ 
+    case 0: 
+            System.out.println("zero"); 
+    	    break; 
+    case 1: 
+            System.out.println("one"); 
+    case 2: 
+            System.out.println("two"); 
+    default: 
+            System.out.println("default"); 
+}
+OPTIONS
+4
+1) one 
+2) one, default 
+3) one, two, default 
+4) default 
+ANSWER 3
+<b>The answer is 3) one, two, default</b>
+Code will continue to fall through a case statement until it encounters a break.
+END QUESTION
+QUESTION 
+What will happen if you try to compile and run the following code? 
+public class DLSoftwareSolutions { 
+        public static void main(String argv[])
+        { 
+           int dl[]=new int[5];
+           System.out.println(dl[0]); 
+        } 
+}
+What is the output?
+OPTIONS
+4
+1) Error: dl is referenced before it is initialized 
+2) null 
+3) 0 
+4) 5 
+ANSWER 3
+<b>The answer is 3) 0 is printed, (Exam Objective 1.7)</b>
+Arrays are always initialised when they are created. As this is an array of ints it will be initialised with zeros.
+ 
+<b><u>Exam Tip</u></b>
+
+Arrays can hold primitives or objects, but the array itself is always an object.
+
+When you declare an array, the brackets can be left or right of the name.
+
+Arrays are indexed beginning with zero.
+
+Look out for code that tries to access an out-of-range array index.
+
+It is never legal to include the size of an array in the declaration.
+
+You must include the size of an array when you construct it (using new) unless you are creating an anonymous array
+END QUESTION
+QUESTION 
+Given
+
+1. int[] colours;
+2. int[][] redColours = new int[5][];
+3. colours = redColours;
+4. int[] colours2 = new int[5];
+5. colours = colours2;
+
+Choose one.
+OPTIONS
+4
+1) Compiles OK 
+2) Run-time error
+3) Compile time error line 3
+4) Compile time error line 5
+ANSWER 3
+<b>The answer is 3) "Compile time error line 3", (Exam Objective 1.3)</b>
+<i>A 2 dimensional array of int arrays cannot be assigned to an int array reference.</i>
+
+<b><u>Exam Tip</u></b>
+
+Arrays can hold primitives or objects, but the array itself is always an object.
+
+When you declare an array, the brackets can be left or right of the name.
+
+Arrays are indexed beginning with zero.
+
+Look out for code that tries to access an out-of-range array index.
+
+It is never legal to include the size of an array in the declaration.
+
+You must include the size of an array when you construct it (using new) unless you are creating an anonymous array
+END QUESTION
+QUESTION 
+What will happen when you compile and run this code?
+
+1. Colour[] colours;
+2. Red[] redColours = new Red[5];
+3. redColours = colours;
+4. Green[] greenColours = new Green[5];
+5. colours = greenColours;
+OPTIONS
+4
+1) Compiles OK 
+2) Run-time error
+3) Compile time error line 3
+4) Compile time error line 5
+ANSWER 3
+<b>The answer is 3) "Compile time error line 3", (Exam Objective 1.3)</b>
+You cannot reverse the legal assignments. A Colour array cannot be assigned to a Red array.
+
+<b><u>Exam Tip</u></b>
+
+Arrays can hold primitives or objects, but the array itself is always an object.
+
+When you declare an array, the brackets can be left or right of the name.
+
+Arrays are indexed beginning with zero.
+
+Look out for code that tries to access an out-of-range array index.
+
+It is never legal to include the size of an array in the declaration.
+
+You must include the size of an array when you construct it (using new) unless you are creating an anonymous array
+
+END QUESTION
+QUESTION 
+What will happen when you compile and run this code?
+
+1. Colour[] colours;
+2. Red[] redColours = new Red[5];
+3. colours = redColours;
+4. Dog[] dogs = new Dog[5];
+5. colours = dogs;
+
+Choose one.
+
+OPTIONS
+4
+1) Compiles OK 
+2) Run-time error
+3) Compile time error line 4
+4) Compile time error line 5
+ANSWER 4
+<b>The answer is 4) "Compile time error line 5", Dog is not a type of Colour. (Exam Objective 1.3)</b>
+
+<i>An array of objects can hold any object that passes the IS-A test.</i>
+
+<b><u>Exam Tip</u></b>
+
+Arrays can hold primitives or objects, but the array itself is always an object.
+
+When you declare an array, the brackets can be left or right of the name.
+
+Arrays are indexed beginning with zero.
+
+Look out for code that tries to access an out-of-range array index.
+
+It is never legal to include the size of an array in the declaration.
+
+You must include the size of an array when you construct it (using new) unless you are creating an anonymous array
+
+
+END QUESTION
+QUESTION 
+What will happen when you compile and run this code?
+
+1. int[] intArray;
+2. int[] intArray2 = new int[5];
+3. char[] charArray = new char[6];
+4. intArray = intArray2;
+5. intArray = charArray;
+OPTIONS
+4
+1) Compiles OK 
+2) Run-time error
+3) Compile time error line 4
+4) Compile time error line 5
+ANSWER 4
+<b>The answer is 4) "Compile time error line 5", (Exam Objective 1.3)</b>
+<i>An int array cannot be reassigned to anything that is not an int array including an int value.</i>
+
+<b><u>Exam Tip</u></b>
+
+Arrays can hold primitives or objects, but the array itself is always an object.
+
+When you declare an array, the brackets can be left or right of the name.
+
+Arrays are indexed beginning with zero.
+
+Look out for code that tries to access an out-of-range array index.
+
+It is never legal to include the size of an array in the declaration.
+
+You must include the size of an array when you construct it (using new) unless you are creating an anonymous array
+
+END QUESTION
+QUESTION 
+What will happen if you try to compile and run the following code? 
+
+public class Q 
+{ 
+        public static void main(String argv[])
+        { 
+                int anar[]=new int[]{1,2,3};
+                System.out.println(anar[1]); 
+        } 
+}
+OPTIONS
+4
+1) 1 
+2) Error anar is referenced before it is initialized 
+3) 2 
+4) Error: size of array must be defined 
+ANSWER 3
+<b>Option 3 is correct, 2 is printed (Exam Objective 1.3)</b>
+
+<b><u>Exam Tip</u></b>
+
+Arrays can hold primitives or objects, but the array itself is always an object.
+
+When you declare an array, the brackets can be left or right of the name.
+
+Arrays are indexed beginning with zero.
+
+Look out for code that tries to access an out-of-range array index.
+
+It is never legal to include the size of an array in the declaration.
+
+You must include the size of an array when you construct it (using new) unless you are creating an anonymous array
+
+END QUESTION
+QUESTION 
+What will happen when you compile and run the following code? 
+
+public class MyClass
+{ 
+    static int i; 
+    public static void main(String argv[])
+    { 
+       System.out.println(i); 
+    } 
+}
+OPTIONS
+4
+1) Error Variable i may not have been initialized 
+2) null 
+3) 1 
+4) 0 
+ANSWER 4
+<b>Option 4 is correct, 0 is printed.</b>
+
+<b><u>Exam Tip</u></b>
+
+Class level variables are always initialised to default values. In the case of an int this will be 0. 
+Method level variables are not given default values.
+END QUESTION
+QUESTION 
+Which of the following is NOT a keyword or reserved word in Java? 
+
+OPTIONS
+4
+1) if 
+2) then 
+3) goto 
+4) while 
+ANSWER 2
+<b>The correct answer is 2 (then)</b>
+END QUESTION
+QUESTION 
+What will be printed out if this code is run with the following command line? 
+
+java myprog good morning
+
+public class myprog
+{ 
+  public static void main(String argv[])
+  { 
+    System.out.println(argv[2]) 
+  }
+}
+OPTIONS
+4
+1) myprog 
+2) good 
+3) morning 
+4) Exception thrown
+ANSWER 4
+<b>Answer is (4) Exception thrown</b>
+
+<b><u>Exam Tip</u></b>
+
+Unlike C/C++ java does not start the parameter count with the program name. 
+
+It does however start from zero. So in this case zero starts with good, morning would be 1 and there is no parameter 2 so an exception is raised. 
+
+END QUESTION
+QUESTION 
+A byte can be of what size 
+
+OPTIONS
+3
+1) -128 to 127 
+2) (-2 power 8 )-1 to 2 power 8 
+3) -255 to 256 
+ANSWER 1
+<b>Option 1 is correct, a byte is a signed 8 bit integer. </b>
+
+END QUESTION
+QUESTION 
+Which of the following will not compile? 
+
+Option 1
+ 
+import java.awt.*; 
+package Mypackage; 
+class Myclass {}
+
+Option 2
+ 
+package MyPackage; 
+import java.awt.*; 
+class MyClass{}
+OPTIONS
+2
+1) Option 1
+2) Option 2
+ANSWER 1
+<b>Option 1 will not compile, Option 2 is OK</b>
+
+Because any package declaration must come before any other code. Comments may appear anywhere. 
+
+END QUESTION
+QUESTION 
+What will happen if you try to compile and run the following code?
+
+public class MyClass 
+{ 
+   public static void main(String arguments[]) 
+   { 
+      amethod(arguments); 
+   } 
+   public void amethod(String[] arguments) 
+   { 
+      System.out.println(arguments); 
+      System.out.println(arguments[1]); 
+   } 
+}
+OPTIONS
+4
+1) error Can't make static reference to void amethod. 
+2) error method main not correct 
+3) error array must include parameter 
+4) amethod must be declared with String 
+ANSWER 1
+<b>The correct answer is (1) Can't make static reference to void amethod.</b>
+
+Because main is defined as static you need to create an instance of the class in order to call any non-static methods. Thus a typical way to do this would be. 
+MyClass m=new MyClass(); 
+m.amethod(); 
+Answer 2 is an attempt to confuse because the convention is for a main method to be in the form 
+String argv[] 
+That argv is just a convention and any acceptable identifier for a string array can be used. 
+Answers 3 and 4 are just nonsense. 
+END QUESTION
+QUESTION 
+public class Test
+{			
+	Integer fred = 100;		
+	Test go(Test test)
+	{
+	  fred = null;
+	  return test;
+	}
+			
+	public static void main(String[] args)
+	{
+	  Test t1 = new Test();
+	  Test t2 = new Test();
+	  Test t3 = t1.go(t2);
+	  t1 = null;
+	  // HERE	
+	}		
+}
+When HERE is reached, how many objects will be eligible for garbage collection?		
+OPTIONS
+4
+1. 0
+2. 1
+3. 2
+4. 3
+ANSWER 3
+<b>Option 3 is correct</b>
+
+2 objects are available for GC, only 1 Test object (t1) is eligible for GC, but its associated Integer fred object is also eligible.
+
+<b><u>Exam Tip</u></b>
+We have found using a pen and paper is usefull for these questions, sketch out the objects as they are created, re-assigned and deleted. This will help you keep track of what objects will be eligible for garbage collection.
+END QUESTION
+QUESTION 
+True or False. A static method can access an instance variable directly.
+OPTIONS
+2
+1 True
+2 False
+ANSWER 2
+<b>Option 2 False, a static method cannot access an instance variable.</b>
+
+<b><u>Exam Tip</u></b>
+
+All static members belong to the class, not to any instance
+static members cant be overridden, but they can be redefined.
+
+END QUESTION
+QUESTION 
+True or False. A constructor is always invoked when a new object is created 
+OPTIONS
+2
+1 True
+2 False
+ANSWER 1
+<b>Option 1 True, A constructor is ALWAYS invoked when a new object is created</b>
+END QUESTION
+QUESTION 
+Is this statement true?
+
+Overriden methods can throw new or broader checked exceptions
+OPTIONS
+2
+1.  Yes
+2.  No
+ANSWER 2
+
+<b>Correct answer is Option 2. No</b>
+
+<i>
+Overriden methods cannot throw new or broader checked exceptions but may throw fewer or narrower checked exceptions, or any unchecked exception
+</i>
+
+<b><u>Exam Tip</u></b>
+
+Final methods cannot be overridden
+Only inherited methods may be overridden
+END QUESTION
+QUESTION 
+Runnable is an interface. 
+OPTIONS
+2
+1 True
+2 False
+ANSWER 1
+<b>Yes, Runnable is an interface.</b> 	
+END QUESTION
+QUESTION 
+A class can be both final and abstract
+OPTIONS
+2
+1 True
+2 False
+ANSWER 2
+<b>Answer is 2, false</b>
+
+<i>A class <b>cannot</b> be both final and abstract.</i>
+
+If you think about it a final class cannot be extended and the whole point of an abstract class is that it needs to be extended.	
+END QUESTION
+QUESTION 
+Given:
+enum Cars {
+		
+   FORD("Mondeo"),TOYOTA("Avensis"),FIAT("Punto");
+   String make;
+   Cars(String m) {make = m;}
+}
+public class Test{
+    static Cars c;
+    public static void main(String[] args){
+        System.out.println(c.FORD.make);
+	}
+}
+What is the output?
+OPTIONS
+2
+1 Mondeo
+2 Compilation error 
+ANSWER 1
+<b>Answer is option 1</b> 
+Output is Mondeo, enums can have constructors and variables (Objective 1.3)
+
+<b><u>Exam Tip</u></b>
+
+Enums can contain constructors, methods, variables and constant class bodies
+Enum constructors can never be invoked directly in code, they are always called automatically when an enum is initialised.
+	
+END QUESTION
+QUESTION 
+Is this legal?
+
+ public class DlSoftwareSolutions{};   
+ public class Test{}
+OPTIONS
+2
+1 Yes
+2 No
+ANSWER 2
+<b>Answer is option 2, no.</b>
+
+A source code file can have only one public class. (Objective 1.1)
+
+<b><u>Exam Tip</u></b>
+
+If the source file contains a public class, the filename must match the public class name.
+	
+END QUESTION
+QUESTION 
+What line of code inserted in line 8 will compile?
+
+1. Class C 
+2. {
+3. 	public static void main(String[] args) 
+4.	{
+5.      go(5);
+6       go(5,6);
+7.  }
+8.
+9. }
+OPTIONS
+4
+1. static void go(int... someArgs){}
+2. static void go(int[] someArgs){}
+3. static void go(int someArgs...){}
+4. static void go(int someArgs..., int d){}
+ANSWER 1
+<b>The correct answer is 1 as it uses valid var-args syntax.(Objective 1.4)</b>
+
+2 is incorrect as it is an array 
+3 uses invalid var-arg syntax 
+4 is invalid as the var-arg must be the last in a methods arguments.
+
+<b><u>Exam Tip</u></b>
+
+A var-arg parameter is declared with the syntax type... name; for instance go(short... x){}
+
+END QUESTION
+QUESTION 
+Which of the following identifiers is illegal?
+
+1. int _h;
+2. int $fred;
+3. int xxxx_____;
+4. int e#;
+OPTIONS
+4
+1. Option 1
+2. Option 2
+3. Option 3
+4. Option 4
+ANSWER 4
+<b>The correct answer is 4 (Exam Objectives 1.3 and 1.4)</b>
+According to the Java Language Specification, a Java identifier can contain only A-Z, a-z, 0-9, _ and $, and start only with one of A-Z, a-z, or $.
+Seeing as # is not one of those, e# is illegal. 
+
+<b><u>Exam Tip</u></b>
+
+Identifiers can begin with a letter, underscore, or a currency character.
+After the first character, identifiers can also include digits
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+It is valid to use abstract and static modifiers together in a method declaration?
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>The correct answer is 2. No the statement is incorrect. It is not valid</b>
+
+How would you implement such an abstract method? Surely not in a subclass, because static methods aren't inherited. 
+
+END QUESTION
+QUESTION 
+Is the following statement true?
+
+It is invalid to use abstract and static modifiers together in a method declaration?
+
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+<b>The correct answer is 1. Yes the statement is correct. Yes it IS invalid.</b>
+
+How would you implement such an abstract method? Surely not in a subclass, because static methods aren't inherited. 
+
+END QUESTION
+QUESTION 
+What will get output when this code gets run?
+
+public class Run {
+public static void main(String[] args) 
+{
+	try
+	{
+		String a = null;	
+		a.length();
+	}
+	catch(NullPointerException e)
+	{
+		System.out.println("NullPointerException");
+		return;
+	}
+	catch(Exception e)
+	{
+		System.out.println("Exception");
+		return;
+	}
+	finally
+	{
+		System.out.println("Finally");
+	}	
+}
+}
+
+OPTIONS
+4
+1. NullPointerException Finally
+2. NullPointerException
+3. NullPointerException Exception Finally
+4. Exception Finally
+ANSWER 1
+<b>The correct answer is 1. NullPointerException Finally gets output</b>
+
+END QUESTION
+QUESTION 
+What will get output when this code gets run?
+
+public class Run {
+public static void main(String[] args) 
+{
+	try
+	{
+		String a = null;	
+		a.length();
+	}
+	catch(NullPointerException e)
+	{
+		System.out.println("NullPointerException");
+		System.exit(1);
+	}
+	catch(Exception e)
+	{
+		System.out.println("Exception");
+		return;
+	}
+	finally
+	{
+		System.out.println("Finally");
+	}	
+}
+}
+
+OPTIONS
+4
+1. NullPointerException Finally
+2. NullPointerException
+3. NullPointerException Exception Finally
+4. Exception Finally
+ANSWER 2
+<b>The correct answer is 2. NullPointerException</b>
+
+Finally does NOT get output.
+
+In this case the finally block will not execute because when you say System.exit (0); the control immediately goes out of the program, and thus finally never executes.
+
+END QUESTION
+QUESTION 
+What will get output when this code gets run?
+
+public class Run {
+public static void main(String[] args) 
+{
+	try
+	{
+		String a = null;	
+		a.length();
+	}
+	catch(NullPointerException e)
+	{
+		System.out.println("NullPointerException");
+		System.exit(1);
+	}
+	catch(Exception e)
+	{
+		System.out.println("Exception");
+		return;
+	}
+	finally
+	{
+		System.out.println("Finally");
+	}	
+}
+}
+
+OPTIONS
+4
+1. NullPointerException Finally
+2. NullPointerException
+3. NullPointerException Exception Finally
+4. Exception Finally
+ANSWER 2
+<b>The correct answer is 2. NullPointerException</b>
+
+Finally does NOT get output.
+
+In this case the finally block will not execute because when you say System.exit (0); the control immediately goes out of the program, and thus finally never executes.
+
+END QUESTION
+QUESTION 
+What will get output when this code gets run?
+
+public class Run {
+public static void main(String[] args) 
+{
+	try
+	{
+		String a = null;	
+		a.length();
+	}
+	catch(Exception e)
+	{
+		System.out.println("Exception");
+		return;
+	}
+	catch(NullPointerException e)
+	{
+		System.out.println("NullPointerException");
+	}	
+	finally
+	{
+		System.out.println("Finally");
+	}	
+}
+}
+OPTIONS
+4
+1. NullPointerException Finally
+2. NullPointerException
+3. NullPointerException Exception Finally
+4. Compilation error
+ANSWER 4
+<b>The correct answer is 4. Compilation error</b>
+
+Unreachable catch block for NullPointerException. It is already handled by the catch block for Exception
+END QUESTION
+QUESTION 
+What will get output when this code gets run?
+
+public class Run {
+public static void main(String[] args) 
+{
+	try
+	{
+		String a = null;
+		a.length();		
+		System.out.println("Arise Sir John Lambie");		
+	}	
+	finally
+	{
+		System.out.println("Finally");
+	}	
+}
+}
+
+OPTIONS
+4
+1. Compiler error - no catch block for try
+2. "Arise Sir John Lambie" then "Finally"
+3. "Arise Sir John Lambie"
+4. Runtime Error and output of "Finally"
+ANSWER 4
+<b>The correct answer is 4. Runtime Error and output of "Finally"</b>
+END QUESTION
+QUESTION 
+What will get output when this code gets run?
+
+public class Run 
+{	
+	public int method()
+	{
+		try
+		{
+			return 1;		
+		}	
+		finally
+		{
+			return 2;
+		}			
+	}	
+public static void main(String[] args) 
+{
+	System.out.println(new Run().method());
+}
+}
+
+OPTIONS
+2
+1. 1
+2. 2
+ANSWER 2
+<b>The correct answer is 2. 2 gets printed</b>
+END QUESTION
+QUESTION 
+Does Java provide any construct to find out the size of an object?
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>The correct answer is 2. No</b>
+
+No there is not sizeof operator in Java. So there is not direct way to determine the size of an object directly in Java.
+
+END QUESTION
+QUESTION 
+What will get output when this code gets run?
+
+public class Run 
+{	
+	public int method()
+	{
+		try
+		{
+			return 1;		
+		}	
+		finally
+		{
+			return 2;
+		}			
+	}	
+public static void main(String[] args) 
+{
+	System.out.println(new Run().method());
+}
+}
+
+OPTIONS
+2
+1. 1
+2. 2
+ANSWER 2
+<b>The correct answer is 2. 2 gets printed</b>
+END QUESTION
+QUESTION 
+What is the difference between a Vector and an ArrayList?
+OPTIONS
+2
+1. Vector is synchronized whereas Arraylist is not.
+2. Arraylist is synchronized whereas Vector is not.
+ANSWER 1
+<b>The correct answer is 1.</b>
+END QUESTION
+QUESTION 
+Will the following code compile?
+
+class A 
+{
+	public A(int a, int b){}
+}
+public class B extends A{}
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 2
+<b>The correct answer is 2. No</b>
+
+The compiler created a default constructor for B.
+The default constructor is a no-arg constructor with a no-arg call to super() which does not exist in A, hence the compiler error.
+
+<b><u>Exam Tip</u></b>
+
+The compiler will create a default constructor if you dont create an constructor in your class.
+
+The default constructor is a no-arg constructor with a no-arg call to super()
+END QUESTION
+QUESTION 
+What will be the output?
+
+class A 
+{
+	public A()
+	{
+	   System.out.println("A1");
+	}
+}
+public class B extends A
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("B");
+		B b = new B();
+	}
+}
+OPTIONS
+2
+1. B
+2. B A1
+ANSWER 2
+<b>The correct answer is 2. B A1</b>
+
+The default constructor for B is a no-arg constructor with a no-arg call to super(), which outputs A1.
+
+<b><u>Exam Tip</u></b>
+
+The compiler will create a default constructor if you dont create an constructor in your class.
+
+The default constructor is a no-arg constructor with a no-arg call to super()
+END QUESTION
+QUESTION 
+What will be the output?
+
+class A 
+{
+	public void A(){System.out.println("A1");}
+}
+public class B extends A
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("B");
+		B b = new B();
+	}
+}
+OPTIONS
+2
+1. B
+2. B A1
+ANSWER 1
+<b>The correct answer is 1. B</b>
+
+Sorry....this is a sneaky question, look closer at the "what you thought was a constructor" of the A class. It has a void return, so is actually a method NOT a constructor.
+
+You have to pay close attention to the code!
+
+<b><u>Exam Tip</u></b>
+
+The compiler will create a default constructor if you dont create an constructor in your class.
+
+The default constructor is a no-arg constructor with a no-arg call to super()
+END QUESTION
+QUESTION 
+You need to create a class that will store a unique object elements. You do not need to sort these elements but they must be unique.
+
+What interface might be most suitable to meet this need?
+OPTIONS
+4
+1) Set
+2) List
+3) Map
+4) Vector
+ANSWER 1
+<b>The correct answer is 1. Set</b>
+
+The Set interface ensures that its elements are unique, but does not order the elements. 
+END QUESTION
+QUESTION 
+Which of the following statements are True?
+
+OPTIONS
+4
+1) Constructors cannot have a visibility modifier
+2) Constructors can be marked public and protected, but not private
+3) Constructors can only have a primitive return type
+4) Constructors are not inherited
+ANSWER 4
+<b>The correct answer is 4. Constructors are not inherited</b>
+
+Constructors can be marked public, private or protected. Constructors do not have a return type.
+END QUESTION
+QUESTION 
+Under what circumstances might you use the yield method of the Thread class
+
+OPTIONS
+4
+1) To call from the currently running thread to allow another thread of the same or higher priority to run
+2) To call on a waiting thread to allow it to run
+3) To allow a thread of higher priority to run
+4) To call from the currently running thread with a parameter designating which thread should be allowed to run
+ANSWER 1
+<b>The correct answer is 1.</b>
+
+<i>To call from the currently running thread to allow another thread of the same or higher priority to run</i>
+
+Option 3 looks plausible but there is no guarantee that the thread that grabs the cpu time will be of a higher priority. It will depend on the threading algorithm of the Java Virtual Machine and the underlying operating system.
+END QUESTION
+QUESTION 
+All public methods in the Thread class are static and therefore only affect the current thread. True or False?
+
+OPTIONS
+2
+1)	True
+2)	False
+ANSWER 1
+<b>The correct answer is 1) true.</b>
+END QUESTION
+QUESTION 
+In a switch statement, the argument to the case label (case argument:) can be any variable which can fit within an int. True/False?
+	
+OPTIONS
+2
+1)	True
+2)	False
+ANSWER 2
+<b>The correct answer is 2) False.</b>
+
+The case argument must be either an int literal, or an int-compatible variable which is a constant ie., static final.
+END QUESTION
+QUESTION 
+Overloaded methods must not throw new checked exceptions not thrown by the original method. True/False?	
+
+OPTIONS
+2
+1)	True
+2)	False
+ANSWER 2
+<b>The correct answer is 2) False.</b>
+
+This would be true for overriding methods, but overloaded methods are free to throw new checked exceptions. (from Java Ranch)
+END QUESTION
+QUESTION 
+Which of the following statements are true?
+
+
+OPTIONS
+4
+1) Assigning null to a reference causes the object to be garbage collected
+2) Assigning null to a reference causes the object to become eligable for garbage collection
+3) An object is eligable for garbage collection once it is unreachable via any reference
+4) Any object created within a method will be eligable for garbage collection once the method ceases execution
+ANSWER 3
+<b>The correct answer is 3)</b>
+
+<i>An object is eligable for garbage collection once it is unreachable via any reference</i>
+
+Assigning null to a reference will only cause the object it references to be ready for garbage collection if no other reference points to it.It is possible to create an object inside a method and to also assign a reference created outside the method to the same object,so the completion of a method is no guarantee that an object is eligable for garbage collection.
+END QUESTION
+QUESTION 
+Variables declared within methods cannot be marked as static?
+
+OPTIONS
+2
+1)	True
+2)	False
+ANSWER 1
+<b>The correct answer is 1) True.</b>
+END QUESTION
+QUESTION 
+When programming a local inner class inside a method code block, which of the following statements is true?
+
+OPTIONS
+4
+1) The inner class will only have access to static variables in the enclosing class
+2) The inner class can use any local variables declared in the method
+3) The only local variables an inner class can use are those that are declared final
+4) The only local variables an inner class can use are those that are declared static
+ANSWER 3
+<b>The correct answer is 3)</b>
+
+<i>The only local variables an inner class can use are those that are declared final</i>
+
+Only local variables declared final can be used by the inner class.
+END QUESTION
+QUESTION 
+How can you destroy an object?
+
+OPTIONS
+4
+1) Null all the references to the object
+2) Call Runtime.getRuntime().gc
+3) Set all of the object's references to null
+4) Only the garbage collection system can destroy an object
+ANSWER 4
+<b>The correct answer is 4</b>
+
+<i>Only the garbage collection system can destroy an object</i>
+
+You can request that an object be destroyed, but only the GC decides when is actually destroyed.
+END QUESTION
+QUESTION 
+Which of the following statements are true of the HashMap class?
+OPTIONS
+4
+1) It does not permit null values
+2) It does not permit null keys
+3) It stores information as key/value pairs
+4) Elements are returned in the order they were added
+ANSWER 3
+<b>The correct answer is 3)</b>
+
+It permits null values and null keys. 
+It stores information as key/value pairs.
+This class does not guarantee the order of its elements over time.
+
+END QUESTION
+QUESTION 
+True or False?
+
+If two objects return the same hashCode value they must be equal according to the equals method
+
+OPTIONS
+2
+1)	True
+2)	False
+ANSWER 2
+<b>The correct answer is 2) False.</b>
+
+Having the same hashCode does not tell you that two objects are equal. If they are equal they must return the same HashCode value, but if they are not equal they could return the same hashCode value.
+END QUESTION
+QUESTION 
+	
+interface I{
+
+void f1(); // 1
+
+public void f2(); // 2
+
+protected void f3(); // 3
+
+private void f4(); // 4
+
+}
+
+which lines generate compile time errors?
+
+
+OPTIONS
+4
+1. At lines 1,2,3,4
+2. At line 3
+3. At line 1
+4. At lines 3,4
+ANSWER 4
+
+<b>Correct Answer is 4 </b>
+
+All methods declared within an interface are implicitly public, a weaker access level can not be declared.
+END QUESTION
+QUESTION 
+	
+What is the difference between String Buffer and String Builder APIs?
+
+OPTIONS
+4
+1. String Buffer is the base class class for String Builder.
+2. String Builder provides a more simplified API over the String Buffer class
+3. String Buffer is thread safe whereas String Builder is not.
+4. tring Builder is thread safe whereas String Buffer is not. 
+ANSWER 3
+
+<b>Answer is option 3, String Buffer is thread safe whereas String Builder is not. </b>
+
+END QUESTION
+QUESTION 
+	
+A top level class without any modifier is accessible to 
+
+OPTIONS
+4
+1. Any class 
+2. Any class within the same package
+3. Any class within the same file
+4. Any subclass of this class
+ANSWER 2
+
+<b>Answer is option 2, Any class within the same package </b>
+
+END QUESTION
+QUESTION 
+What gets output?
+
+class Animal {}
+  
+class Horse extends Animal{}
+  
+class UseAnimal   
+{  
+    public void doStuff(Animal obj)  
+    {  
+        System.out.println("A");  
+    }  
+    public void doStuff(Horse obj)  
+    {  
+        System.out.println("B");  
+    }  
+    public static void main(String args[])  
+    {  
+        Animal a=new Animal();  
+        Horse h=new Horse();  
+        UseAnimal ua=new UseAnimal();  
+          
+        ua.doStuff(a);  
+        ua.doStuff(h); 
+        
+        Animal ah=new Horse();  
+
+        ua.doStuff(ah);  
+          
+    }  
+}  	
+	
+OPTIONS
+4
+1. ABA
+2. ABB
+3. AAA
+4. BBB
+ANSWER 1
+
+<b>Answer is option 1, ABA gets printed </b>
+
+This is about overloading, overloading happens at compile time, so for overloading it uses the reference type which is an Animal object, if overriding was used it would treat it as a Horse object.
+END QUESTION
+QUESTION 
+Is the following legal?
+
+if (true);  
+	
+OPTIONS
+2
+1. Yes
+2. No
+ANSWER 1
+
+<b>Answer is option 1, yes it is legal </b>
+END QUESTION
+QUESTION 
+When // finished is reached , how many objects are eligible for Garbage Collection?
+
+class Zoo 
+{
+	String animal = "Tiger";
+	
+	Zoo go(Zoo zoo) 
+	{
+		zoo = null;
+		return zoo;
+	}
+	
+    public static void main(String args[])  
+	{
+		 Zoo z1 = new Zoo();
+		 Zoo z2 = new Zoo();
+		 Zoo z3 = c1.go(z2);
+		 z1 = null;
+		 // finished
+	}
+}
+	
+OPTIONS
+4
+1. 0
+2. 1
+3. 2
+4. 4
+ANSWER 3
+
+<b>Answer is option 3, 2 objects are eligible.</b>
+
+z1 is eligible and its associated String object animal. If you thought the answer was 4 because z2 also gets garbage collected, this is incorrect as a copy of z2 gets passed to the go() method.
+END QUESTION
+
+
+
+
+
